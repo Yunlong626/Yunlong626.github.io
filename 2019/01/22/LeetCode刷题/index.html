@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -155,6 +155,8 @@
 <meta property="og:image" content="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210409124118335.png">
 <meta property="og:image" content="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210411092859009.png">
 <meta property="og:image" content="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210411111403208.png">
+<meta property="og:image" content="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210426175732260.png">
+<meta property="og:image" content="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210426181131420.png">
 <meta property="og:image" content="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210410093526939.png">
 <meta property="og:image" content="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210410094617676.png">
 <meta property="og:image" content="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210410095627239.png">
@@ -165,7 +167,7 @@
 <meta property="og:image" content="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210407093902378.png">
 <meta property="og:image" content="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210330202907036.png">
 <meta property="article:published_time" content="2019-01-22T12:05:07.000Z">
-<meta property="article:modified_time" content="2021-04-11T03:14:22.000Z">
+<meta property="article:modified_time" content="2021-04-26T10:13:44.692Z">
 <meta property="article:author" content="PiPiLong">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="算法">
@@ -178,7 +180,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Pisces',
+    scheme: 'Muse',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -186,7 +188,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: 'Author'
     },
     algolia: {
       applicationID: '',
@@ -262,93 +264,29 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
+            Home
           </a>
         </li>
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            归档
+            Archives
           </a>
         </li>
       
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
       
     </ul>
   
 
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
   
 </nav>
 
@@ -382,7 +320,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/pipi.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -404,9 +342,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-22T20:05:07+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-22T20:05:07+08:00">
                 2019-01-22
               </time>
             
@@ -425,7 +363,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -448,43 +386,7 @@
           
 
           
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
 
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                   字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  
-                </span>
-              
-            </div>
           
 
           
@@ -844,8 +746,13 @@
 <p>根据LinkedHashMap 而来 — 内部节点前后指针，并且存储通过 Key,Node&lt;Key,Value&gt;存</p>
 <p>注意<strong>特殊情况判断</strong>（这里一个bug卡了很久很久），注意插入 时容量判断问题</p>
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210411111403208.png" alt="image-20210411111403208"></p>
+<h2 id="155-最小栈"><a href="#155-最小栈" class="headerlink" title="155. 最小栈"></a>155. 最小栈</h2><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210426175732260.png" alt="image-20210426175732260"></p>
+<h3 id="思考-12"><a href="#思考-12" class="headerlink" title="思考"></a>思考</h3><h3 id="1-自定义"><a href="#1-自定义" class="headerlink" title="1. 自定义"></a>1. 自定义</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> val;</span><br><span class="line">        Node next;</span><br><span class="line">        Node(<span class="keyword">int</span> val)&#123;</span><br><span class="line">            <span class="keyword">this</span>.val = val;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Node head;</span><br><span class="line">    Node min;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MinStack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        head = <span class="keyword">null</span>;</span><br><span class="line">        min = head;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        Node node = <span class="keyword">new</span> Node(val);</span><br><span class="line">        node.next = head;</span><br><span class="line">        head = node;</span><br><span class="line">        <span class="keyword">if</span>(min == <span class="keyword">null</span>)&#123;</span><br><span class="line">            min = head;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(min.val &gt; val)&#123;</span><br><span class="line">            min = node;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head.val == min.val)&#123;</span><br><span class="line">            Node node = head.next;</span><br><span class="line">            min = node;</span><br><span class="line">            <span class="keyword">while</span>(node != <span class="keyword">null</span>)&#123;</span><br><span class="line">                min = node.val&gt;min.val ?  min:node;</span><br><span class="line">                node = node.next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        head = head.next;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> head.val;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> min.val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210426181131420.png" alt="image-20210426181131420"></p>
+<p>思路就是维护一个头指针，和一个最小指针，在pop时进行判断，虽然会有偶尔的On时间复杂度，但整体来说是好的。从Lru中学到</p>
 <h2 id="263-丑数"><a href="#263-丑数" class="headerlink" title="263. 丑数"></a>263. 丑数</h2><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210410093526939.png" alt="image-20210410093526939"></p>
-<h3 id="思考-12"><a href="#思考-12" class="headerlink" title="思考"></a>思考</h3><p>位运算？</p>
+<h3 id="思考-13"><a href="#思考-13" class="headerlink" title="思考"></a>思考</h3><p>位运算？</p>
 <h3 id="1-简单递归"><a href="#1-简单递归" class="headerlink" title="1. 简单递归"></a>1. 简单递归</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isUgly</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span>((n &amp; <span class="number">1</span>) == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> isUgly(n/<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">if</span>((n % <span class="number">3</span>) == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> isUgly(n/<span class="number">3</span>);</span><br><span class="line">        <span class="keyword">if</span>((n % <span class="number">5</span>) == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> isUgly(n/<span class="number">5</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210410094617676.png" alt="image-20210410094617676"></p>
@@ -855,7 +762,7 @@
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210410095627239.png" alt="image-20210410095627239"></p>
 <p>还是很有感触，这迭代还是很快 ….. 所以能用迭代还是用迭代把</p>
 <h2 id="300-最长递增子序列"><a href="#300-最长递增子序列" class="headerlink" title="300. 最长递增子序列"></a>300. 最长递增子序列</h2><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210330164045435.png" alt="image-20210330164045435"></p>
-<h3 id="思考-13"><a href="#思考-13" class="headerlink" title="思考"></a>思考</h3><p>可以不连续，  动态规划 dp   通项式</p>
+<h3 id="思考-14"><a href="#思考-14" class="headerlink" title="思考"></a>思考</h3><p>可以不连续，  动态规划 dp   通项式</p>
 <h3 id="1-自己写的dp"><a href="#1-自己写的dp" class="headerlink" title="1. 自己写的dp"></a>1. 自己写的dp</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line"><span class="keyword">int</span> max = Integer.MIN_VALUE;</span><br><span class="line">dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;nums.length; i++)&#123;</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> inmax = Integer.MIN_VALUE;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j&lt;i; j++)&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(nums[j]&lt;nums[i] &amp;&amp; nums[j]&gt;inmax )&#123;</span><br><span class="line">            inmax = nums[j];</span><br><span class="line">            k = j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(inmax != Integer.MIN_VALUE&amp;&amp; dp[k] &lt; dp[j]&amp;&amp; nums[j] &lt; nums[i])&#123;</span><br><span class="line">            k = j;</span><br><span class="line">            inmax = nums[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(inmax == Integer.MIN_VALUE) dp[i] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(nums[k] == nums[i]) dp[i] = dp[k];</span><br><span class="line">    <span class="keyword">else</span> dp[i] = dp[k] + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(max&lt;=dp[i])&#123;</span><br><span class="line">        max = dp[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> max;</span><br></pre></td></tr></table></figure>
 
 <p>条件判断太多了  辣鸡    </p>
@@ -869,7 +776,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLIS</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">1</span>, n = nums.length;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] d = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">1</span>];</span><br><span class="line">        d[len] = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] &gt; d[len]) &#123;</span><br><span class="line">                d[++len] = nums[i];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">int</span> l = <span class="number">1</span>, r = len, pos = <span class="number">0</span>; <span class="comment">// 如果找不到说明所有的数都比 nums[i] 大，此时要更新 d[1]，所以这里将 pos 设为 0</span></span><br><span class="line">                <span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">                    <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">if</span> (d[mid] &lt; nums[i]) &#123;</span><br><span class="line">                        pos = mid;</span><br><span class="line">                        l = mid + <span class="number">1</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        r = mid - <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                d[pos + <span class="number">1</span>] = nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> len;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">作者：LeetCode-Solution</span><br><span class="line">链接：https:<span class="comment">//leetcode-cn.com/problems/longest-increasing-subsequence/solution/zui-chang-shang-sheng-zi-xu-lie-by-leetcode-soluti/</span></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
 
 <h2 id="322-零钱兑换"><a href="#322-零钱兑换" class="headerlink" title="322. 零钱兑换"></a>322. 零钱兑换</h2><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210407093902378.png" alt="image-20210407093902378"></p>
-<h3 id="思考-14"><a href="#思考-14" class="headerlink" title="思考"></a>思考</h3><p>没有想dp ….很拉  有想到DFS 不过没有实现</p>
+<h3 id="思考-15"><a href="#思考-15" class="headerlink" title="思考"></a>思考</h3><p>没有想dp ….很拉  有想到DFS 不过没有实现</p>
 <h3 id="1-记忆DFS"><a href="#1-记忆DFS" class="headerlink" title="1. 记忆DFS"></a>1. 记忆DFS</h3><h3 id="2-DP"><a href="#2-DP" class="headerlink" title="2. DP"></a>2. DP</h3><h2 id="LRU实现"><a href="#LRU实现" class="headerlink" title="LRU实现"></a>LRU实现</h2><h2 id="阿里2020-栈求表达式"><a href="#阿里2020-栈求表达式" class="headerlink" title="阿里2020. 栈求表达式"></a>阿里2020. 栈求表达式</h2><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210330202907036.png" alt="image-20210330202907036"></p>
 <h3 id=""><a href="#" class="headerlink" title=""></a></h3>
       
@@ -963,14 +870,19 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/uploads/pipi.jpg"
-                alt="" />
             
               <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -980,13 +892,11 @@
 
             
               <div class="site-state-item site-state-posts">
-             
-                <a href="/archives/%7C%7C%20archive">
-             
-                <a href="/archives">
               
-                  <span class="site-state-item-count">21</span>
-                  <span class="site-state-item-name">日志</span>
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -997,7 +907,7 @@
               <div class="site-state-item site-state-categories">
                 
                   <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">分类</span>
+                  <span class="site-state-item-name">categories</span>
                 
               </div>
             
@@ -1008,7 +918,7 @@
               <div class="site-state-item site-state-tags">
                 
                   <span class="site-state-item-count">10</span>
-                  <span class="site-state-item-name">标签</span>
+                  <span class="site-state-item-name">tags</span>
                 
               </div>
             
@@ -1018,68 +928,11 @@
           
 
           
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/yunlong626" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="401177923@qq.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="401177923" target="_blank" title="QQ">
-                      
-                        <i class="fa fa-fw fa-qq"></i>QQ</a>
-                  </span>
-                
-            </div>
-          
 
           
           
 
-           
           
-
-          
-          
-              <div class="links-of-blogroll motion-element links-of-blogroll-block">
-                <div class="links-of-blogroll-title">
-                  <!-- modify icon to fire by szw -->
-                  <i class="fa fa-history fa-" aria-hidden="true"></i>
-                  近期文章
-                </div>
-                <ul class="links-of-blogroll-list">
-                  
-                   
-                    <li class="recent_posts_li">
-                      <a href="/2021/04/15/JetPack%E5%AD%A6%E4%B9%A0/" title="" target="_blank"></a>
-                    </li>
-                   
-                    <li class="recent_posts_li">
-                      <a href="/2021/04/15/hello-world/" title="Hello World" target="_blank">Hello World</a>
-                    </li>
-                   
-                    <li class="recent_posts_li">
-                      <a href="/2021/04/12/Kotlin%E5%AD%A6%E4%B9%A0/" title="Kotlin学习" target="_blank">Kotlin学习</a>
-                    </li>
-                   
-                    <li class="recent_posts_li">
-                      <a href="/2021/04/10/RecylerView%E6%BB%91%E5%8A%A8%E5%B5%8C%E5%A5%97%E7%9A%84%E9%97%AE%E9%A2%98/" title="RecylerView滑动嵌套的问题" target="_blank">RecylerView滑动嵌套的问题</a>
-                    </li>
-                   
-                    <li class="recent_posts_li">
-                      <a href="/2021/03/06/Android%E4%B8%AA%E4%BA%BA%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/" title="Android个人开发时总结" target="_blank">Android个人开发时总结</a>
-                    </li>
-                  
-                </ul>
-              </div>
           
 
           
@@ -1087,6 +940,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-%E5%88%B7%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 刷题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JZ-03-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0"><span class="nav-number">1.1.</span> <span class="nav-text">JZ-03. 两数相加</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">思考：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9F%BA%E4%BA%8E%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-number">1.1.2.</span> <span class="nav-text">1. 基于哈希表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8E%9F%E5%9C%B0%E7%BD%AE%E6%8D%A2-nb"><span class="nav-number">1.1.3.</span> <span class="nav-text">2. 原地置换  nb</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JZ-04-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE"><span class="nav-number">1.2.</span> <span class="nav-text">JZ-04. 二维数组中的查找</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%82%E5%AF%9F%EF%BC%9A"><span class="nav-number">1.2.1.</span> <span class="nav-text">观察：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%87%AA%E5%B7%B1%E6%83%B3%E7%9A%84%E7%9F%A9%E9%98%B5%E5%88%86%E5%89%B2%E6%B3%95"><span class="nav-number">1.2.2.</span> <span class="nav-text">1. 自己想的矩阵分割法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5-%E7%BA%BF%E6%80%A7%E6%90%9C%E7%B4%A2"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.  翻转矩阵 &#x2F; 线性搜索</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JZ-10-%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6"><span class="nav-number">1.3.</span> <span class="nav-text">JZ-10. 青蛙跳台阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83"><span class="nav-number">1.3.1.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%80%92%E5%BD%92%EF%BC%88%E8%B6%85%E6%97%B6%EF%BC%89"><span class="nav-number">1.3.2.</span> <span class="nav-text">1. 递归（超时）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="nav-number">1.3.3.</span> <span class="nav-text">2.  动态规划</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JZ-14-I-%E5%89%AA%E7%BB%B3%E5%AD%90"><span class="nav-number">1.4.</span> <span class="nav-text">JZ-14 -I 剪绳子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83%EF%BC%9A-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">思考：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#O-1"><span class="nav-number">1.4.2.</span> <span class="nav-text">O (1):</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JZ-22-%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9"><span class="nav-number">1.5.</span> <span class="nav-text">JZ-22. 链表中倒数第k个节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83-1"><span class="nav-number">1.5.1.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%80%92%E5%BD%92%E5%AF%BB%E6%89%BE%EF%BC%9F"><span class="nav-number">1.5.2.</span> <span class="nav-text">1. 递归寻找？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8F%8C%E6%8C%87%E9%92%88-%E7%9C%9F%E5%A6%99%E5%95%8A"><span class="nav-number">1.5.3.</span> <span class="nav-text">2. 双指针 真妙啊</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83%EF%BC%9A-2"><span class="nav-number">1.5.4.</span> <span class="nav-text">思考：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JZ-24-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8"><span class="nav-number">1.6.</span> <span class="nav-text">JZ-24. 反转链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83-2"><span class="nav-number">1.6.1.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84-pre-%E6%8C%87%E9%92%88%E4%BB%A3%E7%A0%81"><span class="nav-number">1.6.2.</span> <span class="nav-text">1. 自己写的 pre 指针代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">1.6.3.</span> <span class="nav-text">2. 双指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%80%92%E5%BD%92"><span class="nav-number">1.6.4.</span> <span class="nav-text">3. 递归</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jz-47-%E7%A4%BC%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BB%B7%E5%80%BC"><span class="nav-number">1.7.</span> <span class="nav-text">Jz-47. 礼物的最大价值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%80%92%E5%BD%92"><span class="nav-number">1.7.1.</span> <span class="nav-text">1. 递归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-1"><span class="nav-number">1.7.2.</span> <span class="nav-text">2. 动态规划</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jz-48-%E6%9C%80%E9%95%BF%E7%9A%84%E4%B8%8D%E5%90%AB%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.8.</span> <span class="nav-text">Jz-48. 最长的不含重复字符的子字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83-3"><span class="nav-number">1.8.1.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="nav-number">1.8.2.</span> <span class="nav-text">1. 动态规划</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JZ-54-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%AC%ACk%E5%A4%A7%E8%8A%82%E7%82%B9"><span class="nav-number">1.9.</span> <span class="nav-text">JZ-54. 二叉搜索树第k大节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83-4"><span class="nav-number">1.9.1.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">1.9.2.</span> <span class="nav-text">中序遍历</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JZ-56-%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E7%BB%84%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0-I"><span class="nav-number">1.10.</span> <span class="nav-text">JZ-56 数组中数组出现的次数 I</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83-5"><span class="nav-number">1.10.1.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-My-hashTable"><span class="nav-number">1.10.2.</span> <span class="nav-text">1. My hashTable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-My-HashMap"><span class="nav-number">1.10.3.</span> <span class="nav-text">2. My HashMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%BC%82%E6%88%96%E5%A4%A7%E6%B3%95"><span class="nav-number">1.10.4.</span> <span class="nav-text">3. 异或大法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jz-63-%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E5%A4%A7%E5%88%A9%E6%B6%A6"><span class="nav-number">1.11.</span> <span class="nav-text">Jz-63. 股票的最大利润</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83-6"><span class="nav-number">1.11.1.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%8F%8C%E6%8C%87%E9%92%88%E9%81%8D%E5%8E%86"><span class="nav-number">1.11.2.</span> <span class="nav-text">1. 双指针遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-2"><span class="nav-number">1.11.3.</span> <span class="nav-text">2. 动态规划</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-number">1.12.</span> <span class="nav-text">1. 两数之和</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">1.12.1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%8F%8C%E5%A4%B4%E6%8C%87%E9%92%88"><span class="nav-number">1.12.2.</span> <span class="nav-text">1.  双头指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-number">1.12.3.</span> <span class="nav-text">2. 哈希表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8"><span class="nav-number">1.13.</span> <span class="nav-text">一. 买卖股票</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9A%B4%E5%8A%9B%E6%B3%95"><span class="nav-number">1.13.1.</span> <span class="nav-text">暴力法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.14.</span> <span class="nav-text">二. 反转字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E6%AC%A1%E9%81%8D%E5%8E%86"><span class="nav-number">1.14.1.</span> <span class="nav-text">一次遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E6%B3%95"><span class="nav-number">1.14.2.</span> <span class="nav-text">递归法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89-%E8%AE%A1%E7%AE%97%E6%95%B4%E6%95%B0n%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9-%E7%B2%BE%E5%BA%A6%E4%B8%BA0-00001"><span class="nav-number">1.15.</span> <span class="nav-text">三. 计算整数n的平方根  精度为0.00001</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%9B%E9%A1%BF%E8%BF%AD%E4%BB%A3%E6%B3%95"><span class="nav-number">1.15.1.</span> <span class="nav-text">牛顿迭代法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B-%E8%AE%A1%E7%AE%97%E6%95%B4%E6%95%B0n%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9-%E8%BF%94%E5%9B%9E%E6%95%B4%E6%95%B0"><span class="nav-number">1.16.</span> <span class="nav-text">四. 计算整数n的平方根 返回整数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%9B%E9%A1%BF%E8%BF%AD%E4%BB%A3%E6%B3%95%EF%BC%9A"><span class="nav-number">1.16.1.</span> <span class="nav-text">牛顿迭代法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%B3%95"><span class="nav-number">1.16.2.</span> <span class="nav-text">二分法:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E9%99%A4%E6%B3%95%E9%81%BF%E5%85%8D-int-%E6%BA%A2%E5%87%BA%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">1.16.3.</span> <span class="nav-text">用除法避免 int 溢出的情况</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94-%E8%AE%A1%E7%AE%97%E6%B0%B4%E7%AE%B1%E5%AE%B9%E7%A7%AF"><span class="nav-number">1.17.</span> <span class="nav-text">五. 计算水箱容积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E6%AC%A1%E9%81%8D%E5%8E%86-%EF%BC%88%E5%8F%8C%E6%8C%87%E9%92%88%EF%BC%89"><span class="nav-number">1.17.1.</span> <span class="nav-text">一次遍历 （双指针）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD-%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%93-10-12"><span class="nav-number">1.18.</span> <span class="nav-text">六. 整数转罗马数字————–(10&#x2F;12)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HaspMap-%E5%AD%98%E5%82%A8%E9%94%AE%E5%80%BC%E5%AF%B9-%E5%88%A4%E6%96%AD"><span class="nav-number">1.18.1.</span> <span class="nav-text">HaspMap 存储键值对 判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%AA%E5%BF%83%E6%B3%95int-String-%E5%9F%BA%E6%9C%AC%E6%95%B0%E7%BB%84-%E5%AF%B9%E5%BA%94%E5%AD%98%E5%82%A8"><span class="nav-number">1.18.2.</span> <span class="nav-text">贪心法int String 基本数组 对应存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83-7"><span class="nav-number">1.18.3.</span> <span class="nav-text">思考</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap-%E4%B8%AD%E7%9A%84get%E6%96%B9%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%98%AF%E5%90%A6%E4%B8%BAO%EF%BC%881%EF%BC%89%EF%BC%9F"><span class="nav-number">1.18.3.1.</span> <span class="nav-text">HashMap 中的get方法时间复杂度是否为O（1）？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83-%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88-%E2%80%94%E2%80%94%E2%80%94-%EF%BC%8810-12%EF%BC%89"><span class="nav-number">1.19.</span> <span class="nav-text">七. 电话号码的字母组合  ———-（10&#x2F;12）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#String%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BF%AD%E4%BB%A3"><span class="nav-number">1.19.1.</span> <span class="nav-text">String类型的迭代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuilder-%E5%AE%9E%E7%8E%B0%E7%9A%84%E8%BF%AD%E4%BB%A3"><span class="nav-number">1.19.2.</span> <span class="nav-text">StringBuilder 实现的迭代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83-8"><span class="nav-number">1.19.3.</span> <span class="nav-text">思考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6"><span class="nav-number">1.20.</span> <span class="nav-text">八. 二叉树的最大深度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E6%B3%95-1"><span class="nav-number">1.20.1.</span> <span class="nav-text">递归法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83-9"><span class="nav-number">1.20.2.</span> <span class="nav-text">思考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9D-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">1.21.</span> <span class="nav-text">九. 合并两个有序列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BF%AD%E4%BB%A3"><span class="nav-number">1.21.1.</span> <span class="nav-text">1. 迭代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%80%92%E5%BD%92"><span class="nav-number">1.21.2.</span> <span class="nav-text">2. 递归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90%EF%BC%9A"><span class="nav-number">1.21.3.</span> <span class="nav-text">分析：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8-%E2%80%94%E2%80%94%E2%80%9310-16%E6%9C%AA%E5%AE%8C%E5%85%A8%E7%90%86%E8%A7%A3"><span class="nav-number">1.22.</span> <span class="nav-text">十. 反转链表 ——–10.16未完全理解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BF%AD%E4%BB%A3-1"><span class="nav-number">1.22.1.</span> <span class="nav-text">1. 迭代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%80%92%E5%BD%92-1"><span class="nav-number">1.22.2.</span> <span class="nav-text">2. 递归</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E4%B8%80-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9"><span class="nav-number">1.23.</span> <span class="nav-text">十一. 删除排序数组中的重复项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%9A%B4%E5%8A%9B%E4%B8%89%E5%BE%AA%E7%8E%AF-%E2%80%93%E8%A7%A3%E9%9D%9E%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84"><span class="nav-number">1.23.1.</span> <span class="nav-text">1. 暴力三循环 –解非排序数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8F%8C%E6%8C%87%E9%92%88%E5%8D%95%E5%BE%AA%E7%8E%AF-%E2%80%94-%E8%A7%A3%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84"><span class="nav-number">1.23.2.</span> <span class="nav-text">2. 双指针单循环 — 解排序数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E6%80%9D"><span class="nav-number">1.23.3.</span> <span class="nav-text">反思</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E4%BA%8C-%E5%A4%96%E8%A7%82%E6%95%B0%E5%88%97"><span class="nav-number">1.24.</span> <span class="nav-text">十二. 外观数列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#String-%E4%B8%8E-StringBuilder-%E5%85%B3%E4%BA%8E%E6%95%88%E7%8E%87%E5%92%8C%E9%80%92%E5%BD%92%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.24.1.</span> <span class="nav-text">* String 与 StringBuilder 关于效率和递归的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%80%92%E5%BD%92-1"><span class="nav-number">1.24.2.</span> <span class="nav-text">1. 递归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%9C%8B%E9%A2%98%E8%A7%A3%E5%90%8E%E7%9A%84%E7%BB%86%E8%8A%82%E8%B0%83%E6%95%B4"><span class="nav-number">1.24.3.</span> <span class="nav-text">2. 看题解后的细节调整</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#43-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E4%B9%98"><span class="nav-number">1.25.</span> <span class="nav-text">43. 字符串相乘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83%EF%BC%9A-3"><span class="nav-number">1.25.1.</span> <span class="nav-text">思考：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-My-%E8%87%AA%E5%AE%9E%E7%8E%B0%E7%9A%84%E8%BF%9B%E4%BD%8D%E6%9C%BA%E5%88%B6"><span class="nav-number">1.25.2.</span> <span class="nav-text">1. My 自实现的进位机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#53-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C"><span class="nav-number">1.26.</span> <span class="nav-text">53. 最大子序和</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83-10"><span class="nav-number">1.26.1.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-My-DP"><span class="nav-number">1.26.2.</span> <span class="nav-text">1. My DP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B9%E8%BF%9B"><span class="nav-number">1.26.3.</span> <span class="nav-text">改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%88%86%E6%B2%BB-%E7%BA%BF%E6%AE%B5%E6%A0%91"><span class="nav-number">1.26.4.</span> <span class="nav-text">3. 分治  线段树</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#105-%E5%89%8D%E4%B8%AD%E5%BA%8F%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.27.</span> <span class="nav-text">105. 前中序构造二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-1"><span class="nav-number">1.27.1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-My-%E9%80%92%E5%BD%92"><span class="nav-number">1.27.2.</span> <span class="nav-text">1. My 递归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-hashmap%E7%9A%84%E5%B0%8F%E6%94%B9%E8%BF%9B"><span class="nav-number">1.27.3.</span> <span class="nav-text">2. hashmap的小改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BF%AD%E4%BB%A3-%E6%A0%88"><span class="nav-number">1.27.4.</span> <span class="nav-text">3. 迭代 + 栈</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#146-LRU%E7%BC%93%E5%AD%98"><span class="nav-number">1.28.</span> <span class="nav-text">146. LRU缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83-11"><span class="nav-number">1.28.1.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-My-LruHashMap"><span class="nav-number">1.28.2.</span> <span class="nav-text">1. My LruHashMap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#155-%E6%9C%80%E5%B0%8F%E6%A0%88"><span class="nav-number">1.29.</span> <span class="nav-text">155. 最小栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83-12"><span class="nav-number">1.29.1.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%87%AA%E5%AE%9A%E4%B9%89"><span class="nav-number">1.29.2.</span> <span class="nav-text">1. 自定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#263-%E4%B8%91%E6%95%B0"><span class="nav-number">1.30.</span> <span class="nav-text">263. 丑数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83-13"><span class="nav-number">1.30.1.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%AE%80%E5%8D%95%E9%80%92%E5%BD%92"><span class="nav-number">1.30.2.</span> <span class="nav-text">1. 简单递归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%BF%AD%E4%BB%A3"><span class="nav-number">1.30.3.</span> <span class="nav-text">2.  迭代</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#300-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97"><span class="nav-number">1.31.</span> <span class="nav-text">300. 最长递增子序列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83-14"><span class="nav-number">1.31.1.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84dp"><span class="nav-number">1.31.2.</span> <span class="nav-text">1. 自己写的dp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%9C%9F%E6%AD%A3%E7%9A%84dp"><span class="nav-number">1.31.3.</span> <span class="nav-text">2. 真正的dp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%AA%E5%BF%83-%E4%BA%8C%E5%88%86"><span class="nav-number">1.31.4.</span> <span class="nav-text">贪心+二分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#322-%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2"><span class="nav-number">1.32.</span> <span class="nav-text">322. 零钱兑换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83-15"><span class="nav-number">1.32.1.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%AE%B0%E5%BF%86DFS"><span class="nav-number">1.32.2.</span> <span class="nav-text">1. 记忆DFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-DP"><span class="nav-number">1.32.3.</span> <span class="nav-text">2. DP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LRU%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.33.</span> <span class="nav-text">LRU实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%BF%E9%87%8C2020-%E6%A0%88%E6%B1%82%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.34.</span> <span class="nav-text">阿里2020. 栈求表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.34.1.</span> <span class="nav-text"></span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1101,7 +970,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2020/12/28 &mdash; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -1110,10 +979,8 @@
   
 </div>
 
-<!--
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -1121,42 +988,12 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
-
--->
-</br>
-<div class="theme-info">
-  <div class="powered-by"></div>
-  <span class="post-count">博客全站共字</span>
-</div>
-
-
-    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
         
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
-
 
 
 
@@ -1198,8 +1035,6 @@
   
 
 
-  
-
 
 
 
@@ -1240,11 +1075,6 @@
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
 
   
 
@@ -1257,13 +1087,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
@@ -1312,323 +1135,6 @@
 
 
   
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
 
