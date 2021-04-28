@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="数据库学习  Mysql1.  DDL :操作数据库：CRUD  功能    （创建、查询、更新、删除）1.查询与创建show databases、  create database  xxx  、show create  database xxx(查询名称和字符类型)\​        create database xxx if not exists XX(不会报错)   ​        c">
+<meta name="description" content="数据库学习   Mysql 1. DDL : 操作数据库：CRUD 功能    （创建、查询、更新、删除） 1.查询与创建 [show databases、  create database  xxx  、show create  database xxx(查询名称和字符类型)](#show-databases-create-database-xxx-show-create-database-xx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库 学习">
 <meta property="og:url" content="http://example.com/2019/07/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="ZYL的博客">
-<meta property="og:description" content="数据库学习  Mysql1.  DDL :操作数据库：CRUD  功能    （创建、查询、更新、删除）1.查询与创建show databases、  create database  xxx  、show create  database xxx(查询名称和字符类型)\​        create database xxx if not exists XX(不会报错)   ​        c">
+<meta property="og:description" content="数据库学习   Mysql 1. DDL : 操作数据库：CRUD 功能    （创建、查询、更新、删除） 1.查询与创建 [show databases、  create database  xxx  、show create  database xxx(查询名称和字符类型)](#show-databases-create-database-xxx-show-create-database-xx">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-07-22T12:05:07.000Z">
 <meta property="article:modified_time" content="2021-03-10T14:51:04.000Z">
@@ -99,7 +99,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -183,7 +183,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -192,8 +192,38 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -203,9 +233,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -239,7 +303,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/pipi.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -305,7 +369,43 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  10
+                </span>
+              
+            </div>
           
 
           
@@ -323,9 +423,36 @@
       
 
       
-        <h1 id="数据库学习"><a href="#数据库学习" class="headerlink" title="数据库学习"></a>数据库学习</h1><!-- toc -->
+        <h1><span id="数据库学习">数据库学习</span></h1><!-- toc -->
 
-<h2 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h2><h3 id="1-DDL"><a href="#1-DDL" class="headerlink" title="1.  DDL :"></a>1.  DDL :</h3><h3 id="操作数据库：CRUD-功能-（创建、查询、更新、删除）"><a href="#操作数据库：CRUD-功能-（创建、查询、更新、删除）" class="headerlink" title="操作数据库：CRUD  功能    （创建、查询、更新、删除）"></a>操作数据库：CRUD  功能    （创建、查询、更新、删除）</h3><h4 id="1-查询与创建"><a href="#1-查询与创建" class="headerlink" title="1.查询与创建"></a>1.查询与创建</h4><h4 id="show-databases、-create-database-xxx-、show-create-database-xxx-查询名称和字符类型"><a href="#show-databases、-create-database-xxx-、show-create-database-xxx-查询名称和字符类型" class="headerlink" title="show databases、  create database  xxx  、show create  database xxx(查询名称和字符类型)\"></a>show databases、  create database  xxx  、show create  database xxx(查询名称和字符类型)\</h4><p>​        create database xxx if not exists XX(不会报错)  </p>
+<ul>
+<li><a href="#mysql">Mysql</a><ul>
+<li><a href="#1-ddl">1. DDL :</a></li>
+<li><a href="#%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93crud-%E5%8A%9F%E8%83%BD-%E5%88%9B%E5%BB%BA-%E6%9F%A5%E8%AF%A2-%E6%9B%B4%E6%96%B0-%E5%88%A0%E9%99%A4">操作数据库：CRUD 功能    （创建、查询、更新、删除）</a><ul>
+<li><a href="#1%E6%9F%A5%E8%AF%A2%E4%B8%8E%E5%88%9B%E5%BB%BA">1.查询与创建</a></li>
+<li>[show databases、  create database  xxx  、show create  database xxx(查询名称和字符类型)](#show-databases-create-database-xxx-show-create-database-xxx查询名称和字符类型)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%93%8D%E4%BD%9C%E8%A1%A8">操作表</a></li>
+<li><a href="#dml-%E5%A2%9E%E5%88%A0%E6%94%B9%E8%A1%A8%E4%B8%AD%E6%95%B0%E6%8D%AE">DML 增删改表中数据</a></li>
+<li><a href="#dql-%E6%9F%A5%E8%AF%A2%E8%A1%A8%E4%B8%AD%E8%AE%B0%E5%BD%95">DQL 查询表中记录 （*）</a></li>
+<li><a href="#%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F">外键约束</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E8%8C%83%E5%BC%8F">数据库设计范式</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E8%BF%98%E5%8E%9F">数据库的备份和还原</a></li>
+<li><a href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2">多表查询</a></li>
+<li><a href="#%E4%BA%8B%E5%8A%A1">事务</a></li>
+<li><a href="#dcl-%E7%AE%A1%E7%90%86%E7%94%A8%E6%88%B7%E6%8E%88%E6%9D%83">DCL ：管理用户，授权  ：</a></li>
+<li><a href="#jdbc-template-%E4%B8%8E-%E8%BF%9E%E6%8E%A5%E6%B1%A0">JDBC Template 与 连接池</a><ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0">数据库连接池</a></li>
+<li><a href="#spring-jdbc-jdbc-template">Spring JDBC–JDBC Template</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<h2><span id="mysql">Mysql</span></h2><h3><span id="1-ddl">1.  DDL :</span></h3><h3><span id="操作数据库crud-功能-创建-查询-更新-删除">操作数据库：CRUD  功能    （创建、查询、更新、删除）</span></h3><h4><span id="1查询与创建">1.查询与创建</span></h4><h4><span id="show-databases-create-database-xxx-show-create-database-xxx查询名称和字符类型">show databases、  create database  xxx  、show create  database xxx(查询名称和字符类型)\</span></h4><p>​        create database xxx if not exists XX(不会报错)  </p>
 <p>​        create database xx character set xxx(utf-8)</p>
 <p>​        可以连用语句   create database xxx if not exists XX character set xxx</p>
 <span id="more"></span>
@@ -341,7 +468,7 @@
 </ol>
 <p>​            查询当前的数据库   Select database();</p>
 <p>​            使用数据库                use xxxx;</p>
-<h2 id="操作表"><a href="#操作表" class="headerlink" title="操作表"></a>操作表</h2><p>​        CRUD</p>
+<h2><span id="操作表">操作表</span></h2><p>​        CRUD</p>
 <ol>
 <li><p>查询    show tables；</p>
 <p>查询表结构  desc xxx(表名)</p>
@@ -366,7 +493,7 @@
 <p>​                    修改列名 类型： alter table 表名 change 列名 新列名字  新数据类型 </p>
 <p>​                                                alter table 表名  modify 列名 新数据类型</p>
 <p>​                    删除列： alter table 表名 drop 列名; </p>
-<h2 id="DML-增删改表中数据"><a href="#DML-增删改表中数据" class="headerlink" title="DML 增删改表中数据"></a>DML 增删改表中数据</h2><ol>
+<h2><span id="dml-增删改表中数据">DML 增删改表中数据</span></h2><ol>
 <li><p>添加数据</p>
 <p>​            insert into (表名)(column , ~, , ,) values  (x,x,x)  // 列名与值必须对应</p>
 <p>​            inster into （表名）valuse （xxxxx）给所有的行列加上值，否则报错</p>
@@ -379,19 +506,19 @@
 </code></pre>
 <p>​    3. 修改数据：</p>
 <p>​            update table set colume =x1, …… (where  ,,,,)一样可以加入条件<br>​            不加条件则会将表中所有数据 都更改         </p>
-<h2 id="DQL-查询表中记录-（-）"><a href="#DQL-查询表中记录-（-）" class="headerlink" title="DQL 查询表中记录 （*）"></a>DQL 查询表中记录 （*）</h2><hr>
+<h2><span id="dql-查询表中记录">DQL 查询表中记录 （*）</span></h2><hr>
 <ol>
 <li>普通查询   select * from 表名</li>
-<li>语法：  select  字段列表   from 表名列表 where 条件列表  group by 分组字段  <br>          order by 排序   limit  分页限定<BR/>          去除重复关键字：  DISTINCT<BR/>         起别名关键字： AS xxx      </li>
-<li>基础查询：<br/> 1. 多个字段的查询：  <BR/>            select (DISTINCT)xxx  ,yyy   from table <br/>             select (DISTINCT)xxx +yyy   (AS 总分)  from table 求总合且能够换名字 <br/>             select (DISTINCT)xxx +IFNULL(yyy,0)   from table 解决null无法相加问题</li>
-<li>条件查询<br > 1.  条件语句中的= 只有一个=符号  <br /> 2. &lt;&gt; 与!=  等价    、可以用&amp;&amp;但推荐使用 AND<BR> 3. BETWEEN  AND 关键字 也能处理中间量</li>
+<li>语法：  select  字段列表   from 表名列表 where 条件列表  group by 分组字段  <br>          order by 排序   limit  分页限定<br>          去除重复关键字：  DISTINCT<br>         起别名关键字： AS xxx      </li>
+<li>基础查询：<br> 1. 多个字段的查询：  <br>            select (DISTINCT)xxx  ,yyy   from table <br>             select (DISTINCT)xxx +yyy   (AS 总分)  from table 求总合且能够换名字 <br>             select (DISTINCT)xxx +IFNULL(yyy,0)   from table 解决null无法相加问题</li>
+<li>条件查询<br> 1.  条件语句中的= 只有一个=符号  <br> 2. &lt;&gt; 与!=  等价    、可以用&amp;&amp;但推荐使用 AND<br> 3. BETWEEN  AND 关键字 也能处理中间量</li>
 <li>模糊查询<br> setlect * from table WHERE  xxx LIKE ‘_ /‘%’<br> _  :  单个字符  %  :多个字符<br> —若前面没有字符 ‘’%x%” 一样能查出该条数据！！</li>
 <li>排序查询：’<br> select     …  order by xxx DESC/ASC ,aaa …（降序、升序）</li>
 <li>聚合函数：(运算会排除null值)<br> count \max\min\sum\avg<br> select xxx(colume) from table ;<br> select count (ifnull (column,0)) from student;（将null值替换为0）</li>
 <li>分组查询：<br> select sex ,avg(column) AS 平均值，count (id) from table Where … GROUP BY sex Having count(column)…;<br> —AS xxx 起别名，注意逗号<br> —其后可以跟 聚合函数<br> —条件语句在 GROUP BY 之前    <strong>不满足 则不参与分组</strong><br> —聚合函数在 GROUP BY 之后 且有having关键字  <strong>不满足 则不显示</strong></li>
 <li>分页查询：<br> select * from student LIMIT a,b;<br> —a : 起始的页数 (0是第一条)  b: 结尾的页数+1 [a,b);</li>
 </ol>
-<h2 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h2><ol>
+<h2><span id="外键约束">外键约束</span></h2><ol>
 <li><p>创建： create table xxx(</p>
 <p>​            外键列</p>
 <p>​            costraint 外键名 foreign key （外键列名称）（此处括号必须加）                      references 主表名称(主表列名称)（一般是主键）</p>
@@ -409,7 +536,7 @@
 </li>
 </ol>
 <hr>
-<h2 id="数据库设计范式"><a href="#数据库设计范式" class="headerlink" title="数据库设计范式"></a>数据库设计范式</h2><p><strong>目的：解决数据库中的问题</strong></p>
+<h2><span id="数据库设计范式">数据库设计范式</span></h2><p><strong>目的：解决数据库中的问题</strong></p>
 <ol>
 <li>第一范式： 每一列都是不可分割的原子数据项</li>
 <li>第二范式：在第一范式基础上，非码属性必须完全依赖于候选码<ul>
@@ -425,7 +552,7 @@
 </li>
 <li>第三范式，在第二范式基础上，任何非主属性不依赖其他非主属性</li>
 </ol>
-<h2 id="数据库的备份和还原"><a href="#数据库的备份和还原" class="headerlink" title="数据库的备份和还原"></a>数据库的备份和还原</h2><ol>
+<h2><span id="数据库的备份和还原">数据库的备份和还原</span></h2><ol>
 <li>命令行：<ul>
 <li>mysqldump -uuser -ppassword xxx(database)&gt;path</li>
 <li>使用备份文件 source path;</li>
@@ -433,7 +560,7 @@
 </li>
 </ol>
 <hr>
-<h2 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h2><pre><code>* 语法：
+<h2><span id="多表查询">多表查询</span></h2><pre><code>* 语法：
 select * from  aaa,bbb,......（笛卡尔积方式）
 </code></pre>
 <ul>
@@ -460,7 +587,7 @@ select * from  aaa,bbb,......（笛卡尔积方式）
 </li>
 </ol>
 <hr>
-<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><pre><code>1. 基本介绍 
+<h2><span id="事务">事务</span></h2><pre><code>1. 基本介绍 
   * 概念：包含多个操作的业务，被事务管理时，要么同时成功要么同时失败（例如转账）
   * 操作：
       * 1. 开启事务-start transaction;
@@ -490,7 +617,7 @@ select * from  aaa,bbb,......（笛卡尔积方式）
         select @tx_isolation;
     *设置： set global transaction isolation level ....;
 </code></pre>
-<h2 id="DCL-：管理用户，授权-："><a href="#DCL-：管理用户，授权-：" class="headerlink" title="DCL  ：管理用户，授权  ："></a>DCL  ：管理用户，授权  ：</h2>DBA: 数据库管理员：<ol>
+<h2><span id="dcl-管理用户授权">DCL  ：管理用户，授权  ：</span></h2>DBA: 数据库管理员：<ol>
 <li>管理用户： <ul>
 <li>查询：切换mysql数据库， 查询user表<br>  % 表示可以再任意主机使用用户登录数据库</li>
 <li>创建： Create user ‘namexxx@’主机名’ indentified by ‘password’</li>
@@ -516,7 +643,7 @@ select * from  aaa,bbb,......（笛卡尔积方式）
 </li>
 </ul>
 <hr>
-<h2 id="JDBC-Template-与-连接池"><a href="#JDBC-Template-与-连接池" class="headerlink" title="JDBC Template 与 连接池"></a>JDBC Template 与 连接池</h2><h3 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h3><ol>
+<h2><span id="jdbc-template-与-连接池">JDBC Template 与 连接池</span></h2><h3><span id="数据库连接池">数据库连接池</span></h3><ol>
 <li>目的：（避免使用后就开除的现象） 节约用户时间，重复使用连接对象。</li>
 <li>概念： 容器。存放数据库连接，系统初始后容器被创建，容器中申请一些连接对象，用           户访问数据库时，从容器中获取连接对象，访问后将归还这些连接对象</li>
 <li>有点： 节约资源， 用户访问高效</li>
@@ -551,7 +678,7 @@ select * from  aaa,bbb,......（笛卡尔积方式）
 </li>
 <li>**定义工具类 **</li>
 </ol>
-<h3 id="Spring-JDBC–JDBC-Template"><a href="#Spring-JDBC–JDBC-Template" class="headerlink" title="Spring JDBC–JDBC Template"></a>Spring JDBC–JDBC Template</h3><pre><code> *Spring 框架对JDBC的简单封装
+<h3><span id="spring-jdbcjdbc-template">Spring JDBC–JDBC Template</span></h3><pre><code> *Spring 框架对JDBC的简单封装
  1.导入jar包
  2.创建jdbctemplate对象，依赖于dataSource
      jdbctemplate t=new jdbctemplate(ds）
@@ -681,6 +808,10 @@ select * from  aaa,bbb,......（笛卡尔积方式）
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/pipi.jpg"
+                alt="" />
+            
               <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -690,7 +821,7 @@ select * from  aaa,bbb,......（笛卡尔积方式）
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/%20%7C%7C%20archive">
+                <a href="/archives/%7C%7C%20archive">
               
                   <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">posts</span>
@@ -725,6 +856,28 @@ select * from  aaa,bbb,......（笛卡尔积方式）
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yunlong626" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="401177923@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="401177923" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
 
           
           
@@ -747,7 +900,7 @@ select * from  aaa,bbb,......（笛卡尔积方式）
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">数据库学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql"><span class="nav-number">1.1.</span> <span class="nav-text">Mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-DDL"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.  DDL :</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9ACRUD-%E5%8A%9F%E8%83%BD-%EF%BC%88%E5%88%9B%E5%BB%BA%E3%80%81%E6%9F%A5%E8%AF%A2%E3%80%81%E6%9B%B4%E6%96%B0%E3%80%81%E5%88%A0%E9%99%A4%EF%BC%89"><span class="nav-number">1.1.2.</span> <span class="nav-text">操作数据库：CRUD  功能    （创建、查询、更新、删除）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E6%9F%A5%E8%AF%A2%E4%B8%8E%E5%88%9B%E5%BB%BA"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">1.查询与创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#show-databases%E3%80%81-create-database-xxx-%E3%80%81show-create-database-xxx-%E6%9F%A5%E8%AF%A2%E5%90%8D%E7%A7%B0%E5%92%8C%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">show databases、  create database  xxx  、show create  database xxx(查询名称和字符类型)\</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E8%A1%A8"><span class="nav-number">1.2.</span> <span class="nav-text">操作表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DML-%E5%A2%9E%E5%88%A0%E6%94%B9%E8%A1%A8%E4%B8%AD%E6%95%B0%E6%8D%AE"><span class="nav-number">1.3.</span> <span class="nav-text">DML 增删改表中数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DQL-%E6%9F%A5%E8%AF%A2%E8%A1%A8%E4%B8%AD%E8%AE%B0%E5%BD%95-%EF%BC%88-%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">DQL 查询表中记录 （*）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F"><span class="nav-number">1.5.</span> <span class="nav-text">外键约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E8%8C%83%E5%BC%8F"><span class="nav-number">1.6.</span> <span class="nav-text">数据库设计范式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E8%BF%98%E5%8E%9F"><span class="nav-number">1.7.</span> <span class="nav-text">数据库的备份和还原</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.8.</span> <span class="nav-text">多表查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1"><span class="nav-number">1.9.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DCL-%EF%BC%9A%E7%AE%A1%E7%90%86%E7%94%A8%E6%88%B7%EF%BC%8C%E6%8E%88%E6%9D%83-%EF%BC%9A"><span class="nav-number">1.10.</span> <span class="nav-text">DCL  ：管理用户，授权  ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC-Template-%E4%B8%8E-%E8%BF%9E%E6%8E%A5%E6%B1%A0"><span class="nav-number">1.11.</span> <span class="nav-text">JDBC Template 与 连接池</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0"><span class="nav-number">1.11.1.</span> <span class="nav-text">数据库连接池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-JDBC%E2%80%93JDBC-Template"><span class="nav-number">1.11.2.</span> <span class="nav-text">Spring JDBC–JDBC Template</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">数据库学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">Mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.  DDL :</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.2.</span> <span class="nav-text">操作数据库：CRUD  功能    （创建、查询、更新、删除）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">1.查询与创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">show databases、  create database  xxx  、show create  database xxx(查询名称和字符类型)\</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">操作表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">DML 增删改表中数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.4.</span> <span class="nav-text">DQL 查询表中记录 （*）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.5.</span> <span class="nav-text">外键约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.6.</span> <span class="nav-text">数据库设计范式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.7.</span> <span class="nav-text">数据库的备份和还原</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.8.</span> <span class="nav-text">多表查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.9.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.10.</span> <span class="nav-text">DCL  ：管理用户，授权  ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.11.</span> <span class="nav-text">JDBC Template 与 连接池</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.11.1.</span> <span class="nav-text">数据库连接池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.11.2.</span> <span class="nav-text">Spring JDBC–JDBC Template</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -767,7 +920,7 @@ select * from  aaa,bbb,......（笛卡尔积方式）
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2020/12/28 &mdash; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -785,12 +938,32 @@ select * from  aaa,bbb,......（笛卡尔积方式）
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
@@ -832,6 +1005,8 @@ select * from  aaa,bbb,......（笛卡尔积方式）
   
 
 
+  
+
 
 
 
@@ -872,6 +1047,11 @@ select * from  aaa,bbb,......（笛卡尔积方式）
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
 
   
 
@@ -884,6 +1064,13 @@ select * from  aaa,bbb,......（笛卡尔积方式）
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
@@ -932,6 +1119,323 @@ select * from  aaa,bbb,......（笛卡尔积方式）
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 

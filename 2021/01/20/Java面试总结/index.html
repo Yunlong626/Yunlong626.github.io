@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -105,7 +105,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -189,7 +189,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -198,8 +198,38 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -209,9 +239,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -245,7 +309,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/pipi.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -311,7 +375,43 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  5.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  22
+                </span>
+              
+            </div>
           
 
           
@@ -329,9 +429,9 @@
       
 
       
-        <h1 id="Java-SE"><a href="#Java-SE" class="headerlink" title="Java SE"></a>Java SE</h1><!--toc-->
+        <h1><span id="java-se">Java SE</span></h1><!--toc-->
 
-<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><ul>
+<h2><span id="集合">集合</span></h2><h3><span id="arraylist">ArrayList</span></h3><ul>
 <li>允许添加多个null值<ul>
 <li>属性 size 是指 elementData 中实际有多少个元素，而 elementData.length 为集合容量 </li>
 </ul>
@@ -340,11 +440,11 @@
 <li>第一次添加元素时扩容   默认初始的集合容量 10</li>
 <li>每次增删都使modCount增加 ，并且增删会进行modCount的检查，例如在迭代时进行增删操作时 会报错，Itr中的expectedModCount与modCount不一致！</li>
 </ul>
-<p><span style='color:red;font-size:20px;'>面试：优化数组 </span></p>
+<p><span style="color:red;font-size:20px;">面试：优化数组 </span></p>
 <span id="more"></span>
 
 <p>标记-清除法</p>
-<h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>内部hash函数</p>
+<h3><span id="hashmap">HashMap</span></h3><p>内部hash函数</p>
 <p>put前要进行对再次对hashcode再次hash，也就是高16 和低 16做异或运算</p>
 <p><strong>为什么要重写equals 和hascode方法    ，puVal方法中有提到</strong></p>
 <p>注意区分Node的hash 和 key的hashcode</p>
@@ -382,14 +482,14 @@
 </li>
 </ul>
 <p>发生hash碰撞时 当前的元素生成新的节点保存在链表的尾部</p>
-<h3 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h3><p><strong>结构</strong></p>
+<h3><span id="linkedhashmap">LinkedHashMap</span></h3><p><strong>结构</strong></p>
 <p>accessOrder有什么用？</p>
 <p>transient关键字不可见 ？</p>
 <p><strong>实现LRU</strong></p>
 <p><strong>插入删除原理</strong></p>
 <p><strong>hashmap留的后门</strong></p>
 <p>哪种情况下get也会使得重新排序</p>
-<h3 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h3><p>Hashtable既不支持Null key也不支持Null value</p>
+<h3><span id="hashtable">Hashtable</span></h3><p>Hashtable既不支持Null key也不支持Null value</p>
 <p>为啥？</p>
 <p>这是因为Hashtable使用的是安全失败机制（fail-safe），这种机制会使你此次读到的数据不一定是最新的数据。</p>
 <p>如果你使用null值，就会使得其无法判断对应的key是不存在还是为空，因为你无法再调用一次contain(key）来对key是否存在进行判断，ConcurrentHashMap同理。</p>
@@ -398,13 +498,13 @@
 <p>何为安全？多线程插入时的线程不安全问题  – 用hashTable可解决</p>
 <p><strong>如何实现</strong></p>
 <p>synchronized 锁方法</p>
-<h3 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h3><p>优先选择– 性能效率更高</p>
+<h3><span id="concurrenthashmap">ConcurrentHashMap</span></h3><p>优先选择– 性能效率更高</p>
 <p>能说说什么是快速失败什么是安全失败吗？</p>
 <p>快速失败  modCount 不能在多线程下并发修改</p>
 <p>安全失败  concurrent包下的容器都是</p>
-<h3 id="SynchronizedMap"><a href="#SynchronizedMap" class="headerlink" title="SynchronizedMap"></a>SynchronizedMap</h3><p>排斥所 Object mutex</p>
+<h3><span id="synchronizedmap">SynchronizedMap</span></h3><p>排斥所 Object mutex</p>
 <p>就是加锁</p>
-<h2 id="Clone"><a href="#Clone" class="headerlink" title="Clone"></a>Clone</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">User u1 = <span class="keyword">new</span> User(...);</span><br><span class="line">User u2 = u1;<span class="comment">//将u1的reference给了u2</span></span><br><span class="line">u1 != u2</span><br></pre></td></tr></table></figure>
+<h2><span id="clone">Clone</span></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">User u1 = <span class="keyword">new</span> User(...);</span><br><span class="line">User u2 = u1;<span class="comment">//将u1的reference给了u2</span></span><br><span class="line">u1 != u2</span><br></pre></td></tr></table></figure>
 
 
 
@@ -413,34 +513,34 @@
 <p>此时操作u2/u1 都会使另一个的值发生改变</p>
 <p>但如果我们不想改变另一个的值就需要使用到clone</p>
 <p>实现Cloneable接口 //Cloneable接口没有具体的实现方法，他相当于是一个标识，如果类没有继承cloneable接口而调用clone方法，会抛出<strong>CloneNotSupportedExcepion异常</strong></p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h3 id="深拷贝和浅拷贝"><a href="#深拷贝和浅拷贝" class="headerlink" title="深拷贝和浅拷贝"></a>深拷贝和浅拷贝</h3><p>浅拷贝</p>
+<h2><span id></span></h2><h3><span id="深拷贝和浅拷贝">深拷贝和浅拷贝</span></h3><p>浅拷贝</p>
 <p>clone无法clone 一个对象中的另一个对象，还是是一个reference</p>
 <p>深拷贝</p>
 <p>在对象的对象中实现cloneable接口，重写clone方法</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</span><br><span class="line">    Obj obj = (Obj) <span class="keyword">super</span>.clone();</span><br><span class="line">    obj.stu = (Stu) stu.clone();</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="clone的保护机制"><a href="#clone的保护机制" class="headerlink" title="clone的保护机制"></a>clone的保护机制</h3><p>object类中有protected 的native方法 clone，且 User肯定是继承了Object，为什么</p>
-<p><span style='color:red;font-size:24px'>未实现Cloneable接口的类不能调用clone方法</span></p>
-<h4 id="延伸：-protected的作用范围"><a href="#延伸：-protected的作用范围" class="headerlink" title="延伸： protected的作用范围"></a>延伸： protected的作用范围</h4><p>一个public 类， 有protected的方法，</p>
+<h3><span id="clone的保护机制">clone的保护机制</span></h3><p>object类中有protected 的native方法 clone，且 User肯定是继承了Object，为什么</p>
+<p><span style="color:red;font-size:24px">未实现Cloneable接口的类不能调用clone方法</span></p>
+<h4><span id="延伸-protected的作用范围">延伸： protected的作用范围</span></h4><p>一个public 类， 有protected的方法，</p>
 <p>如果在同包下新建类继承他，这个新建的类对象能够调用protecTed的方法</p>
 <p>如果在不同包下 新建一个类 继承他， 创建这个类的对象，不能调用 clone方法，但是可以在这个类中重写protected的方法，这样就能够调用。</p>
-<p><span style='color:#3CB371;font-size:24px'>这就是protected的 派生类对同包可见，不同包不可见的原理</span></p>
+<p><span style="color:#3CB371;font-size:24px">这就是protected的 派生类对同包可见，不同包不可见的原理</span></p>
 <p> protected受访问保护规则是很微妙的。虽然protected域对所有子类都可见。但是有一点很重要，子类只能在自己的作用范围内访问自己继承的那个父类protected域，而无法到访问别的子类（同父类的亲兄弟）所继承的protected域和父类对象的protected域</p>
-<h2 id="实现Serlizable接口的类中UID是啥？"><a href="#实现Serlizable接口的类中UID是啥？" class="headerlink" title="实现Serlizable接口的类中UID是啥？"></a>实现Serlizable接口的类中UID是啥？</h2><p>java序列化机制。简单来说，JAVA序列化的机制是通过 判断类的serialVersionUID来验证的版本一致的。在进行反序列化时，JVM会把传来的字节流中的serialVersionUID于本地相应实体类的serialVersionUID进行比较。如果相同说明是一致的，可以进行反序列化，否则会出现反序列化版本一致的异常，即是InvalidCastException</p>
+<h2><span id="实现serlizable接口的类中uid是啥">实现Serlizable接口的类中UID是啥？</span></h2><p>java序列化机制。简单来说，JAVA序列化的机制是通过 判断类的serialVersionUID来验证的版本一致的。在进行反序列化时，JVM会把传来的字节流中的serialVersionUID于本地相应实体类的serialVersionUID进行比较。如果相同说明是一致的，可以进行反序列化，否则会出现反序列化版本一致的异常，即是InvalidCastException</p>
 <p>显示声明serialVersionUID可以避免对象不一致，</p>
-<h2 id="equals-和-hascode方法"><a href="#equals-和-hascode方法" class="headerlink" title="equals 和 hascode方法"></a>equals 和 hascode方法</h2><h3 id="为什么要重写"><a href="#为什么要重写" class="headerlink" title="为什么要重写"></a>为什么要重写</h3><p>公式：</p>
+<h2><span id="equals-和-hascode方法">equals 和 hascode方法</span></h2><h3><span id="为什么要重写">为什么要重写</span></h3><p>公式：</p>
 <p>hashcode相等时内容不一定相等</p>
 <p>equals相等时hashcode必须相等</p>
 <p>hashmap 存入自定义类时引发的问题</p>
 <p>想用表面一样的两把钥匙去开同一扇门的问题</p>
-<h3 id="hashcode方法如何重写"><a href="#hashcode方法如何重写" class="headerlink" title="hashcode方法如何重写"></a>hashcode方法如何重写</h3><p>到底要比较什么属性或者对象</p>
-<h3 id="equals方法如何重写"><a href="#equals方法如何重写" class="headerlink" title="equals方法如何重写"></a>equals方法如何重写</h3><p>hash值相同时，由于你 hashmap判断链表时，hash值会用equals 方法比较两个对象， 所以如果要开锁，这里就需要重写equals方法</p>
+<h3><span id="hashcode方法如何重写">hashcode方法如何重写</span></h3><p>到底要比较什么属性或者对象</p>
+<h3><span id="equals方法如何重写">equals方法如何重写</span></h3><p>hash值相同时，由于你 hashmap判断链表时，hash值会用equals 方法比较两个对象， 所以如果要开锁，这里就需要重写equals方法</p>
 <p>Object类原生的equals方法就是判断地址，所以这里需要重写</p>
-<h3 id="String类的equals"><a href="#String类的equals" class="headerlink" title="String类的equals"></a>String类的equals</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">this</span> == anObject) &#123;</span><br><span class="line">    <span class="comment">//内存地址相等</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (anObject <span class="keyword">instanceof</span> String) &#123;</span><br><span class="line">    String anotherString = (String)anObject;</span><br><span class="line">    <span class="keyword">int</span> n = value.length;</span><br><span class="line">    <span class="keyword">if</span> (n == anotherString.value.length) &#123;</span><br><span class="line">        <span class="comment">//比较字符串长度</span></span><br><span class="line">        <span class="keyword">char</span> v1[] = value;</span><br><span class="line">        <span class="keyword">char</span> v2[] = anotherString.value;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (n-- != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">//逐一比较字符</span></span><br><span class="line">            <span class="keyword">if</span> (v1[i] != v2[i])</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">false</span>;</span><br></pre></td></tr></table></figure>
+<h3><span id="string类的equals">String类的equals</span></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">this</span> == anObject) &#123;</span><br><span class="line">    <span class="comment">//内存地址相等</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (anObject <span class="keyword">instanceof</span> String) &#123;</span><br><span class="line">    String anotherString = (String)anObject;</span><br><span class="line">    <span class="keyword">int</span> n = value.length;</span><br><span class="line">    <span class="keyword">if</span> (n == anotherString.value.length) &#123;</span><br><span class="line">        <span class="comment">//比较字符串长度</span></span><br><span class="line">        <span class="keyword">char</span> v1[] = value;</span><br><span class="line">        <span class="keyword">char</span> v2[] = anotherString.value;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (n-- != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">//逐一比较字符</span></span><br><span class="line">            <span class="keyword">if</span> (v1[i] != v2[i])</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">false</span>;</span><br></pre></td></tr></table></figure>
 
-<h2 id="AbstrackStringBuilder"><a href="#AbstrackStringBuilder" class="headerlink" title="AbstrackStringBuilder"></a>AbstrackStringBuilder</h2><p>构成</p>
+<h2><span id="abstrackstringbuilder">AbstrackStringBuilder</span></h2><p>构成</p>
 <p>char[] value , int count</p>
-<h3 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h3><p>static final long serialVersionUID = 4383685877147921099L;</p>
+<h3><span id="stringbuilder">StringBuilder</span></h3><p>static final long serialVersionUID = 4383685877147921099L;</p>
 <p>区分 length() 和 capacity() </p>
 <ul>
 <li><p>capacity大小并不是2的幂次方</p>
@@ -455,11 +555,11 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//String 类下的</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getChars</span><span class="params">(<span class="keyword">int</span> srcBegin, <span class="keyword">int</span> srcEnd, <span class="keyword">char</span> dst[], <span class="keyword">int</span> dstBegin)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (srcBegin &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(srcBegin);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (srcEnd &gt; value.length) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(srcEnd);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (srcBegin &gt; srcEnd) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(srcEnd - srcBegin);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="comment">//核心</span></span><br><span class="line">        System.arraycopy(value, srcBegin, dst, dstBegin, srcEnd - srcBegin);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>追问？ 有了解过底层的arraycopy方法吗？</p>
-<h3 id="StringBuffer"><a href="#StringBuffer" class="headerlink" title="StringBuffer"></a>StringBuffer</h3><p>结构： transient char[]  toStringCache , static final long serialVersionUId</p>
-<h4 id="为何是线程安全的？"><a href="#为何是线程安全的？" class="headerlink" title="为何是线程安全的？"></a>为何是线程安全的？</h4><p>使用synchronized </p>
-<h2 id="接口、继承、泛型"><a href="#接口、继承、泛型" class="headerlink" title="接口、继承、泛型"></a>接口、继承、泛型</h2><p>如何看待接口和抽象类？</p>
+<h3><span id="stringbuffer">StringBuffer</span></h3><p>结构： transient char[]  toStringCache , static final long serialVersionUId</p>
+<h4><span id="为何是线程安全的">为何是线程安全的？</span></h4><p>使用synchronized </p>
+<h2><span id="接口-继承-泛型">接口、继承、泛型</span></h2><p>如何看待接口和抽象类？</p>
 <p>你怎么理解泛型？有什么作用？</p>
-<h2 id="深入Synchronized"><a href="#深入Synchronized" class="headerlink" title="深入Synchronized"></a>深入Synchronized</h2><p><strong>Java中的锁类型</strong></p>
+<h2><span id="深入synchronized">深入Synchronized</span></h2><p><strong>Java中的锁类型</strong></p>
 <p>可重入锁、公平锁、互斥锁、自旋锁、偏向锁、轻量级锁、读写锁、共享锁</p>
 <p>ReentrantLock 加锁原理： 更改标识符的值  </p>
 <p>synchronized 到底改变的是对象的什么属性？？？</p>
@@ -474,7 +574,7 @@
 <p>为了保证在方法异常完成时 monitorenter 和 monitorexit 指令依然可以正确配对执行，编译器会自动产生一个异常处理器，这个异常处理器声明可处理所有的异常，它的目的就是用来执行 monitorexit 指令。从字节码中也可以看出多了一个monitorexit指令，它就是异常结束时被执行的释放monitor 的指令。</p>
 <p><strong>为什么早期是重量级锁</strong></p>
 <p>同时我们还必须注意到的是在Java早期版本中，synchronized属于重量级锁，效率低下，因为监视器锁（monitor）是依赖于底层的操作系统的Mutex Lock来实现的，而操作系统实现线程之间的切换时需要从用户态转换到核心态，这个状态之间的转换需要相对比较长的时间，时间成本相对较高</p>
-<h3 id="JVM对锁的优化"><a href="#JVM对锁的优化" class="headerlink" title="JVM对锁的优化"></a><strong>JVM对锁的优化</strong></h3><p>锁的升级： 无锁–偏向–轻量–重量</p>
+<h3><span id="jvm对锁的优化"><strong>JVM对锁的优化</strong></span></h3><p>锁的升级： 无锁–偏向–轻量–重量</p>
 <p><strong>偏向锁</strong></p>
 <p>在大多数情况下，锁不仅不存在多线程竞争，而且总是由同一线程多次获得，因此为了减少同一线程获取锁(会涉及到一些CAS操作,耗时)的代价而引入偏向锁。偏向锁的核心思想是，如果一个线程获得了锁，那么锁就进入偏向模式，此时Mark Word 的结构也变为偏向锁结构，当这个线程再次请求锁时，无需再做任何同步操作，即获取锁的过程，这样就省去了大量有关锁申请的操作，从而也就提供程序的性能。所以，对于没有锁竞争的场合，偏向锁有很好的优化效果，毕竟极有可能连续多次是同一个线程申请相同的锁。但是对于锁竞争比较激烈的场合，偏向锁就失效了，因为这样场合极有可能每次申请锁的线程都是不相同的，因此这种场合下不应该使用偏向锁，否则会得不偿失，需要注意的是，偏向锁失败后，并不会立即膨胀为重量级锁，而是先升级为轻量级锁</p>
 <p><strong>轻量级锁</strong></p>
@@ -483,52 +583,52 @@
 <p>轻量级锁失败后，虚拟机为了避免线程真实地在操作系统层面挂起，还会进行一项称为自旋锁的优化手段。这是基于在大多数情况下，线程持有锁的时间都不会太长，如果直接挂起操作系统层面的线程可能会得不偿失，毕竟操作系统实现线程之间的切换时需要从用户态转换到核心态，这个状态之间的转换需要相对比较长的时间，时间成本相对较高，因此自旋锁会假设在不久将来，当前的线程可以获得锁，因此虚拟机会让当前想要获取锁的线程做几个空循环(这也是称为自旋的原因)，一般不会太久，可能是50个循环或100循环，在经过若干次循环后，如果得到锁，就顺利进入临界区。如果还不能获得锁，那就会将线程在操作系统层面挂起，这就是自旋锁的优化方式，这种方式确实也是可以提升效率的。最后没办法也就只能升级为重量级锁了</p>
 <p><strong>锁消除</strong></p>
 <p>ava虚拟机在JIT编译时(可以简单理解为当某段代码即将第一次被执行时进行编译，又称即时编译)，通过对运行上下文的扫描，去除不可能存在共享资源竞争的锁，通过这种方式消除没有必要的锁，可以节省毫无意义的请求锁时间，如下StringBuffer的append是一个同步方法，但是在add方法中的StringBuffer属于一个局部变量，并且不会被其他线程所使用，因此StringBuffer不可能存在共享资源竞争的情景，JVM会自动将其锁消除</p>
-<h3 id="自旋锁"><a href="#自旋锁" class="headerlink" title="自旋锁"></a>自旋锁</h3><p>CAS   没有获取到锁的线程是不会阻塞的，要通过控制循环值不断获取</p>
+<h3><span id="自旋锁">自旋锁</span></h3><p>CAS   没有获取到锁的线程是不会阻塞的，要通过控制循环值不断获取</p>
 <p>3个操作数  内存值 V（共享） 旧的预期值E（缓存） 要修改的新值N，仅当E == N时，才会修改  E!=N时，则再次查询主存中的V 使 E == N </p>
 <p>底层：硬件</p>
-<h2 id="三大特性"><a href="#三大特性" class="headerlink" title="三大特性"></a>三大特性</h2><h3 id="原子性"><a href="#原子性" class="headerlink" title="原子性"></a>原子性</h3><p>一个或者多个操作在CPU执行的过程中不被中断的特性</p>
-<h4 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h4><p>一个线程修改一个变量后，其他线程能够立即得知这个修改</p>
+<h2><span id="三大特性">三大特性</span></h2><h3><span id="原子性">原子性</span></h3><p>一个或者多个操作在CPU执行的过程中不被中断的特性</p>
+<h4><span id="可见性">可见性</span></h4><p>一个线程修改一个变量后，其他线程能够立即得知这个修改</p>
 <p>各自的线程有其工作内存，即保存时的副本存储的空间</p>
-<h4 id="有序性"><a href="#有序性" class="headerlink" title="有序性"></a>有序性</h4><p>代码的执行顺序  </p>
+<h4><span id="有序性">有序性</span></h4><p>代码的执行顺序  </p>
 <p>编译器 和 处理器执行指令时会进行从排序，改变语序   这里<strong>注意什么时候能改什么时候不能改！</strong></p>
-<h3 id="Volatile"><a href="#Volatile" class="headerlink" title="Volatile"></a>Volatile</h3><ol>
+<h3><span id="volatile">Volatile</span></h3><ol>
 <li><p>保证不同线程对变量操作的内存可见性（修改变量直接刷新回主存），使缓存行无效</p>
 </li>
 <li><p><strong>禁止指令重排序</strong>   注意是并不是完全就是一样的顺序，只保证先后顺序</p>
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210313233725385.png" alt="image-20210313233725385"></p>
 </li>
 </ol>
-<h4 id="happens-before-原则"><a href="#happens-before-原则" class="headerlink" title="happens - before 原则"></a>happens - before 原则</h4><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210313233650045.png" alt="image-20210313233650045"></p>
-<h4 id="volatile-到底锁什么？"><a href="#volatile-到底锁什么？" class="headerlink" title="volatile 到底锁什么？"></a>volatile 到底锁什么？</h4><h4 id="为什么不能保证-count-原子性？"><a href="#为什么不能保证-count-原子性？" class="headerlink" title="为什么不能保证 count++ 原子性？"></a>为什么不能保证 count++ 原子性？</h4><p>单个变量的读写 具有原子性</p>
+<h4><span id="happens-before-原则">happens - before 原则</span></h4><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210313233650045.png" alt="image-20210313233650045"></p>
+<h4><span id="volatile-到底锁什么">volatile 到底锁什么？</span></h4><h4><span id="为什么不能保证-count-原子性">为什么不能保证 count++ 原子性？</span></h4><p>单个变量的读写 具有原子性</p>
 <p>但复合操作则不行</p>
 <p>底层机制：内存屏障</p>
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210313233706649.png" alt="image-20210313233706649"></p>
 <p>使用 ： 状态标记、单例模式</p>
-<h3 id="JUC"><a href="#JUC" class="headerlink" title="JUC"></a>JUC</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><h5 id="synchronized到底是什么-原理？"><a href="#synchronized到底是什么-原理？" class="headerlink" title="synchronized到底是什么  原理？"></a>synchronized到底是什么  原理？</h5><p>synchronized是一个重量级锁，实现依赖于JVM 的 monitor 监视器锁。主要使用monitorenter和monitorexit指令来实现方法同步和代码块同步。在编译的是时候，会将monitorexit指令插入到同步代码块的开始位置，而monitorexit插入方法结束处和异常处，并且每一个monitorexit都有一个与之对应的monitorexit。</p>
+<h3><span id="juc">JUC</span></h3><h4><span id="问题">问题</span></h4><h5><span id="synchronized到底是什么-原理">synchronized到底是什么  原理？</span></h5><p>synchronized是一个重量级锁，实现依赖于JVM 的 monitor 监视器锁。主要使用monitorenter和monitorexit指令来实现方法同步和代码块同步。在编译的是时候，会将monitorexit指令插入到同步代码块的开始位置，而monitorexit插入方法结束处和异常处，并且每一个monitorexit都有一个与之对应的monitorexit。</p>
 <p><strong>任何对象都有一个monitor与之关联</strong>，当一个monitor被持有后，它将被处于锁定状态，线程执行到monitorenter指令时间，会<strong>尝试获取对象所对应的monitor的所有权</strong>，即获取获得对象的锁，由于在编译期会将monitorexit插入到方法结束处和异常处，所以在方法执行完毕或者出现异常的情况会自动释放锁</p>
-<h4 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h4><p>结构  可重入锁 读锁 写锁 </p>
+<h4><span id="锁">锁</span></h4><p>结构  可重入锁 读锁 写锁 </p>
 <p>将大的方法加入同步锁会影响执行效率</p>
 <p>sleep 抱着锁睡觉</p>
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210303172037854.png" alt="image-20210303172037854"></p>
-<h5 id="锁到底锁什么"><a href="#锁到底锁什么" class="headerlink" title="锁到底锁什么"></a>锁到底锁什么</h5><p>synchronized 默认锁的是this  方法的调用者</p>
+<h5><span id="锁到底锁什么">锁到底锁什么</span></h5><p>synchronized 默认锁的是this  方法的调用者</p>
 <p>​    但是this 中的对象则不能同步 ，要同步哪个对象 就锁哪个</p>
-<h5 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h5><p><strong>两个或多个线程在等待对方释放资源；某个同步块同时拥有两个以上对象的锁</strong> </p>
+<h5><span id="死锁">死锁</span></h5><p><strong>两个或多个线程在等待对方释放资源；某个同步块同时拥有两个以上对象的锁</strong> </p>
 <p>产生死锁的条件<br>1.互斥条件：一个资源每次只能被一个进程使用。<br>2.请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。<br>3.不剥夺条件:进程已获得的资源，在末使用完之前，不能强行剥夺。<br>4.循环等待条件:若干进程之间形成一种头尾相接的循环等待资源关系。</p>
-<h4 id="Synchronized和Lock的区别"><a href="#Synchronized和Lock的区别" class="headerlink" title="Synchronized和Lock的区别"></a>Synchronized和Lock的区别</h4><ul>
+<h4><span id="synchronized和lock的区别">Synchronized和Lock的区别</span></h4><ul>
 <li>Lock可以判断是否获取到了锁</li>
 <li>lock必须要手动释放，如果不释放锁，则出现死锁</li>
 <li>Lock不一定会等待下去</li>
 <li>可重入锁，不可中断，非公平 </li>
 <li>Lock适合锁大量的代码</li>
 </ul>
-<h4 id="虚假唤醒"><a href="#虚假唤醒" class="headerlink" title="虚假唤醒"></a>虚假唤醒</h4><p>等待应该总是在循环中</p>
+<h4><span id="虚假唤醒">虚假唤醒</span></h4><p>等待应该总是在循环中</p>
 <p>嵌套的syn语句</p>
-<h4 id="Condition"><a href="#Condition" class="headerlink" title="Condition"></a>Condition</h4><p>精准唤醒和停止   顺序唤醒 </p>
-<h4 id="⑧锁问题"><a href="#⑧锁问题" class="headerlink" title="⑧锁问题"></a>⑧锁问题</h4><h3 id="向下转型和向上转型"><a href="#向下转型和向上转型" class="headerlink" title="向下转型和向上转型"></a>向下转型和向上转型</h3><p>将整个继承关系想像成由上至下</p>
+<h4><span id="condition">Condition</span></h4><p>精准唤醒和停止   顺序唤醒 </p>
+<h4><span id="8锁问题">⑧锁问题</span></h4><h3><span id="向下转型和向上转型">向下转型和向上转型</span></h3><p>将整个继承关系想像成由上至下</p>
 <p>向上转型   子转父（包括接口） 丢失方法</p>
 <p>向下转型   父转子   重新获得失去的方法</p>
 <p>联想 ：Android中findViewById中就是需要向下转型</p>
-<h3 id="自动拆箱和装箱"><a href="#自动拆箱和装箱" class="headerlink" title="自动拆箱和装箱"></a>自动拆箱和装箱</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Integer a = <span class="number">127</span>;</span><br><span class="line">Integer b = <span class="number">127</span>;</span><br><span class="line">System.out.println(a == b);</span><br><span class="line"><span class="comment">//false </span></span><br><span class="line"><span class="comment">//字节码 比较时涉及到intValue方法</span></span><br><span class="line"><span class="comment">//new时涉及valueOf方法</span></span><br></pre></td></tr></table></figure>
+<h3><span id="自动拆箱和装箱">自动拆箱和装箱</span></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Integer a = <span class="number">127</span>;</span><br><span class="line">Integer b = <span class="number">127</span>;</span><br><span class="line">System.out.println(a == b);</span><br><span class="line"><span class="comment">//false </span></span><br><span class="line"><span class="comment">//字节码 比较时涉及到intValue方法</span></span><br><span class="line"><span class="comment">//new时涉及valueOf方法</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">intValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -538,7 +638,7 @@
 
 <p>涉及到的静态内部类的知识</p>
 <p>静态内部类只会在使用到该内部类时才会加载，否则是不会加载的，也就是只有使用到new Integer的valueOf方法时，才会加载该内部类</p>
-<h2 id="I-O操作"><a href="#I-O操作" class="headerlink" title="I/O操作"></a>I/O操作</h2><h3 id="常见几大输入输出类"><a href="#常见几大输入输出类" class="headerlink" title="常见几大输入输出类"></a>常见几大输入输出类</h3><h2 id="面试问题"><a href="#面试问题" class="headerlink" title="面试问题"></a>面试问题</h2><p>为什么0.1+0.2= 0.30000000004</p>
+<h2><span id="io操作">I/O操作</span></h2><h3><span id="常见几大输入输出类">常见几大输入输出类</span></h3><h2><span id="面试问题">面试问题</span></h2><p>为什么0.1+0.2= 0.30000000004</p>
 <p>short s1 = 1; s1 = s1 + 1;</p>
 <p>HashSet内部如何实现？为什么要重写hashcode 和 equals方法？</p>
 <p>try catch 中 return 会怎么样？ 调用system.exit呢</p>
@@ -661,6 +761,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/pipi.jpg"
+                alt="" />
+            
               <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -670,7 +774,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/%20%7C%7C%20archive">
+                <a href="/archives/%7C%7C%20archive">
               
                   <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">posts</span>
@@ -705,6 +809,28 @@
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yunlong626" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="401177923@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="401177923" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
 
           
           
@@ -727,7 +853,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-SE"><span class="nav-number">1.</span> <span class="nav-text">Java SE</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88"><span class="nav-number">1.1.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.1.1.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap"><span class="nav-number">1.1.2.</span> <span class="nav-text">HashMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkedHashMap"><span class="nav-number">1.1.3.</span> <span class="nav-text">LinkedHashMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hashtable"><span class="nav-number">1.1.4.</span> <span class="nav-text">Hashtable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConcurrentHashMap"><span class="nav-number">1.1.5.</span> <span class="nav-text">ConcurrentHashMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SynchronizedMap"><span class="nav-number">1.1.6.</span> <span class="nav-text">SynchronizedMap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Clone"><span class="nav-number">1.2.</span> <span class="nav-text">Clone</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D"><span class="nav-number">1.3.1.</span> <span class="nav-text">深拷贝和浅拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clone%E7%9A%84%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6"><span class="nav-number">1.3.2.</span> <span class="nav-text">clone的保护机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BB%B6%E4%BC%B8%EF%BC%9A-protected%E7%9A%84%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">延伸： protected的作用范围</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0Serlizable%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%B1%BB%E4%B8%ADUID%E6%98%AF%E5%95%A5%EF%BC%9F"><span class="nav-number">1.4.</span> <span class="nav-text">实现Serlizable接口的类中UID是啥？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#equals-%E5%92%8C-hascode%E6%96%B9%E6%B3%95"><span class="nav-number">1.5.</span> <span class="nav-text">equals 和 hascode方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E5%86%99"><span class="nav-number">1.5.1.</span> <span class="nav-text">为什么要重写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hashcode%E6%96%B9%E6%B3%95%E5%A6%82%E4%BD%95%E9%87%8D%E5%86%99"><span class="nav-number">1.5.2.</span> <span class="nav-text">hashcode方法如何重写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#equals%E6%96%B9%E6%B3%95%E5%A6%82%E4%BD%95%E9%87%8D%E5%86%99"><span class="nav-number">1.5.3.</span> <span class="nav-text">equals方法如何重写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String%E7%B1%BB%E7%9A%84equals"><span class="nav-number">1.5.4.</span> <span class="nav-text">String类的equals</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AbstrackStringBuilder"><span class="nav-number">1.6.</span> <span class="nav-text">AbstrackStringBuilder</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuilder"><span class="nav-number">1.6.1.</span> <span class="nav-text">StringBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuffer"><span class="nav-number">1.6.2.</span> <span class="nav-text">StringBuffer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BD%95%E6%98%AF%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%EF%BC%9F"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">为何是线程安全的？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E3%80%81%E7%BB%A7%E6%89%BF%E3%80%81%E6%B3%9B%E5%9E%8B"><span class="nav-number">1.7.</span> <span class="nav-text">接口、继承、泛型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E5%85%A5Synchronized"><span class="nav-number">1.8.</span> <span class="nav-text">深入Synchronized</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM%E5%AF%B9%E9%94%81%E7%9A%84%E4%BC%98%E5%8C%96"><span class="nav-number">1.8.1.</span> <span class="nav-text">JVM对锁的优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%97%8B%E9%94%81"><span class="nav-number">1.8.2.</span> <span class="nav-text">自旋锁</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="nav-number">1.9.</span> <span class="nav-text">三大特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%AD%90%E6%80%A7"><span class="nav-number">1.9.1.</span> <span class="nav-text">原子性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E8%A7%81%E6%80%A7"><span class="nav-number">1.9.1.1.</span> <span class="nav-text">可见性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E6%80%A7"><span class="nav-number">1.9.1.2.</span> <span class="nav-text">有序性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Volatile"><span class="nav-number">1.9.2.</span> <span class="nav-text">Volatile</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#happens-before-%E5%8E%9F%E5%88%99"><span class="nav-number">1.9.2.1.</span> <span class="nav-text">happens - before 原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#volatile-%E5%88%B0%E5%BA%95%E9%94%81%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.9.2.2.</span> <span class="nav-text">volatile 到底锁什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E4%BF%9D%E8%AF%81-count-%E5%8E%9F%E5%AD%90%E6%80%A7%EF%BC%9F"><span class="nav-number">1.9.2.3.</span> <span class="nav-text">为什么不能保证 count++ 原子性？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JUC"><span class="nav-number">1.9.3.</span> <span class="nav-text">JUC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">1.9.3.1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#synchronized%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E5%8E%9F%E7%90%86%EF%BC%9F"><span class="nav-number">1.9.3.1.1.</span> <span class="nav-text">synchronized到底是什么  原理？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%94%81"><span class="nav-number">1.9.3.2.</span> <span class="nav-text">锁</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%94%81%E5%88%B0%E5%BA%95%E9%94%81%E4%BB%80%E4%B9%88"><span class="nav-number">1.9.3.2.1.</span> <span class="nav-text">锁到底锁什么</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AD%BB%E9%94%81"><span class="nav-number">1.9.3.2.2.</span> <span class="nav-text">死锁</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Synchronized%E5%92%8CLock%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.9.3.3.</span> <span class="nav-text">Synchronized和Lock的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%99%9A%E5%81%87%E5%94%A4%E9%86%92"><span class="nav-number">1.9.3.4.</span> <span class="nav-text">虚假唤醒</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Condition"><span class="nav-number">1.9.3.5.</span> <span class="nav-text">Condition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A7%E9%94%81%E9%97%AE%E9%A2%98"><span class="nav-number">1.9.3.6.</span> <span class="nav-text">⑧锁问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E4%B8%8B%E8%BD%AC%E5%9E%8B%E5%92%8C%E5%90%91%E4%B8%8A%E8%BD%AC%E5%9E%8B"><span class="nav-number">1.9.4.</span> <span class="nav-text">向下转型和向上转型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E6%8B%86%E7%AE%B1%E5%92%8C%E8%A3%85%E7%AE%B1"><span class="nav-number">1.9.5.</span> <span class="nav-text">自动拆箱和装箱</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#I-O%E6%93%8D%E4%BD%9C"><span class="nav-number">1.10.</span> <span class="nav-text">I&#x2F;O操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%87%A0%E5%A4%A7%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B1%BB"><span class="nav-number">1.10.1.</span> <span class="nav-text">常见几大输入输出类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98"><span class="nav-number">1.11.</span> <span class="nav-text">面试问题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Java SE</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.1.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.2.</span> <span class="nav-text">HashMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.3.</span> <span class="nav-text">LinkedHashMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.4.</span> <span class="nav-text">Hashtable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.5.</span> <span class="nav-text">ConcurrentHashMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.6.</span> <span class="nav-text">SynchronizedMap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">Clone</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.1.</span> <span class="nav-text">深拷贝和浅拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.2.</span> <span class="nav-text">clone的保护机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">延伸： protected的作用范围</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.4.</span> <span class="nav-text">实现Serlizable接口的类中UID是啥？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.5.</span> <span class="nav-text">equals 和 hascode方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.5.1.</span> <span class="nav-text">为什么要重写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.5.2.</span> <span class="nav-text">hashcode方法如何重写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.5.3.</span> <span class="nav-text">equals方法如何重写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.5.4.</span> <span class="nav-text">String类的equals</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.6.</span> <span class="nav-text">AbstrackStringBuilder</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.6.1.</span> <span class="nav-text">StringBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.6.2.</span> <span class="nav-text">StringBuffer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">为何是线程安全的？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.7.</span> <span class="nav-text">接口、继承、泛型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.8.</span> <span class="nav-text">深入Synchronized</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.8.1.</span> <span class="nav-text">JVM对锁的优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.8.2.</span> <span class="nav-text">自旋锁</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.9.</span> <span class="nav-text">三大特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.9.1.</span> <span class="nav-text">原子性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.9.1.1.</span> <span class="nav-text">可见性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.9.1.2.</span> <span class="nav-text">有序性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.9.2.</span> <span class="nav-text">Volatile</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.9.2.1.</span> <span class="nav-text">happens - before 原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.9.2.2.</span> <span class="nav-text">volatile 到底锁什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.9.2.3.</span> <span class="nav-text">为什么不能保证 count++ 原子性？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.9.3.</span> <span class="nav-text">JUC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.9.3.1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.9.3.1.1.</span> <span class="nav-text">synchronized到底是什么  原理？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.9.3.2.</span> <span class="nav-text">锁</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.9.3.2.1.</span> <span class="nav-text">锁到底锁什么</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.9.3.2.2.</span> <span class="nav-text">死锁</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.9.3.3.</span> <span class="nav-text">Synchronized和Lock的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.9.3.4.</span> <span class="nav-text">虚假唤醒</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.9.3.5.</span> <span class="nav-text">Condition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.9.3.6.</span> <span class="nav-text">⑧锁问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.9.4.</span> <span class="nav-text">向下转型和向上转型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.9.5.</span> <span class="nav-text">自动拆箱和装箱</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.10.</span> <span class="nav-text">I&#x2F;O操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.10.1.</span> <span class="nav-text">常见几大输入输出类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.11.</span> <span class="nav-text">面试问题</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -747,7 +873,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2020/12/28 &mdash; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -765,12 +891,32 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
@@ -812,6 +958,8 @@
   
 
 
+  
+
 
 
 
@@ -852,6 +1000,11 @@
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
 
   
 
@@ -864,6 +1017,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
@@ -912,6 +1072,323 @@
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 

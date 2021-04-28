@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="数独游戏 (回溯算法)—数据结构课程设计实验报告[toc]    游戏介绍简介 传统的数独游戏，采用 9x9 方格，通过填入数字 1-9 ，确保每行、每列、以及该格所在的 3x3 的方格区域中 不出现相同的数字。 每个生成的数独只有一个解 使用 AndroidStudio 平台开发 ，基于Java语言">
+<meta name="description" content="数独游戏 (回溯算法)—数据结构课程设计实验报告[toc]    游戏介绍 简介 实现功能： 游戏操作说明： 项目运行说明 (如果需要)：   游戏设计理念(回溯算法核心部分) 核心思想： isValid()方法： isOnlyOne()方法 generateSudoWithLevel()方法 流程概括 实验测试—具体耗时 实验分析   游戏开发中的其他想法和问题 课设总结 感谢     游戏介绍">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安卓数独游戏课设">
 <meta property="og:url" content="http://example.com/2020/12/22/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="ZYL的博客">
-<meta property="og:description" content="数独游戏 (回溯算法)—数据结构课程设计实验报告[toc]    游戏介绍简介 传统的数独游戏，采用 9x9 方格，通过填入数字 1-9 ，确保每行、每列、以及该格所在的 3x3 的方格区域中 不出现相同的数字。 每个生成的数独只有一个解 使用 AndroidStudio 平台开发 ，基于Java语言">
+<meta property="og:description" content="数独游戏 (回溯算法)—数据结构课程设计实验报告[toc]    游戏介绍 简介 实现功能： 游戏操作说明： 项目运行说明 (如果需要)：   游戏设计理念(回溯算法核心部分) 核心思想： isValid()方法： isOnlyOne()方法 generateSudoWithLevel()方法 流程概括 实验测试—具体耗时 实验分析   游戏开发中的其他想法和问题 课设总结 感谢     游戏介绍">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20201222225942614.png">
 <meta property="og:image" content="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
@@ -104,7 +104,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -188,7 +188,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -197,8 +197,38 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -208,9 +238,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -244,7 +308,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/pipi.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -310,7 +374,43 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  3.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  12
+                </span>
+              
+            </div>
           
 
           
@@ -328,16 +428,40 @@
       
 
       
-        <h1 id="数独游戏-回溯算法-—数据结构课程设计实验报告"><a href="#数独游戏-回溯算法-—数据结构课程设计实验报告" class="headerlink" title="数独游戏 (回溯算法)—数据结构课程设计实验报告"></a>数独游戏 (回溯算法)—数据结构课程设计实验报告</h1><p>[toc]</p>
+        <h1><span id="数独游戏-回溯算法数据结构课程设计实验报告">数独游戏 (回溯算法)—数据结构课程设计实验报告</span></h1><p>[toc]</p>
 <!-- toc -->
 
+<ul>
+<li><a href="#%E6%B8%B8%E6%88%8F%E4%BB%8B%E7%BB%8D">游戏介绍</a><ul>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0%E5%8A%9F%E8%83%BD">实现功能：</a></li>
+<li><a href="#%E6%B8%B8%E6%88%8F%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E">游戏操作说明：</a></li>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E8%BF%90%E8%A1%8C%E8%AF%B4%E6%98%8E-%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81">项目运行说明 (如果需要)：</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E6%A0%B8%E5%BF%83%E9%83%A8%E5%88%86">游戏设计理念(回溯算法核心部分)</a><ul>
+<li><a href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3">核心思想：</a></li>
+<li><a href="#isvalid%E6%96%B9%E6%B3%95"><strong>isValid()方法</strong>：</a></li>
+<li><a href="#isonlyone%E6%96%B9%E6%B3%95">isOnlyOne()方法</a></li>
+<li><a href="#generatesudowithlevel%E6%96%B9%E6%B3%95">generateSudoWithLevel()方法</a></li>
+<li><a href="#%E6%B5%81%E7%A8%8B%E6%A6%82%E6%8B%AC">流程概括</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E6%B5%8B%E8%AF%95-%E5%85%B7%E4%BD%93%E8%80%97%E6%97%B6">实验测试—具体耗时</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E5%88%86%E6%9E%90">实验分析</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%85%B6%E4%BB%96%E6%83%B3%E6%B3%95%E5%92%8C%E9%97%AE%E9%A2%98">游戏开发中的其他想法和问题</a></li>
+<li><a href="#%E8%AF%BE%E8%AE%BE%E6%80%BB%E7%BB%93">课设总结</a></li>
+<li><a href="#%E6%84%9F%E8%B0%A2">感谢</a></li>
+</ul>
+<!-- tocstop -->
+
 <hr>
-<h2 id="游戏介绍"><a href="#游戏介绍" class="headerlink" title="游戏介绍"></a>游戏介绍</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><ul>
+<h2><span id="游戏介绍">游戏介绍</span></h2><h3><span id="简介">简介</span></h3><ul>
 <li>传统的数独游戏，采用 9x9 方格，通过填入数字 1-9 ，确保<strong>每行、每列、以及该格所在的 3x3 的方格区域</strong>中 不出现相同的数字。</li>
 <li><strong>每个生成的数独只有一个解</strong></li>
 <li>使用 AndroidStudio 平台开发 ，基于Java语言 <span id="more"></span></li>
 </ul>
-<h3 id="实现功能："><a href="#实现功能：" class="headerlink" title="实现功能："></a>实现功能：</h3><ol>
+<h3><span id="实现功能">实现功能：</span></h3><ol>
 <li>UI 基本游戏界面的 UI 布局，数独生成与 UI 动态生成的异步处理 ，功能按钮</li>
 <li>AutoDetect 游戏内实时检错并自动删除错误数字</li>
 <li>Show Answer 显示答案功能，动态提示答案</li>
@@ -345,7 +469,7 @@
 <li>Timer 计时功能</li>
 <li>Record 记录功能，通过数据库记录每次成功完成数独的题目、答案图像，完成日期，完成时间，以及数独的难度</li>
 </ol>
-<h3 id="游戏操作说明："><a href="#游戏操作说明：" class="headerlink" title="游戏操作说明："></a>游戏操作说明：</h3><ul>
+<h3><span id="游戏操作说明">游戏操作说明：</span></h3><ul>
 <li>有安卓手机（版本不低于17)：<ol>
 <li>将apk文件  (app-release.apk) 安装至手机，直接启动即可</li>
 <li>进入游戏后，请<strong>先允许该程序访问手机内存</strong>(因为记录保存时要进行数据的存取)，否则程序会自动退出。通过”START”按钮开始游戏，选择难度，进入游戏界面，通过拖动上方较大的1-9的图像，将想要放置的数组拖动到想放置的位置即可。（注：如果是拖动至已生成的原始数独位置，则不会替换为放置的数组，会弹出“The block is origin”提示）。成功完成，则会在中部显示”Congratulation！”的动画提示。</li>
@@ -360,7 +484,7 @@
 </li>
 </ul>
 <p><strong>我自己的测试视频放在了主目录下，如果以上两种情况下都不能运行，可以看我的演示视频。</strong></p>
-<h3 id="项目运行说明-如果需要-："><a href="#项目运行说明-如果需要-：" class="headerlink" title="项目运行说明 (如果需要)："></a>项目运行说明 (如果需要)：</h3><ul>
+<h3><span id="项目运行说明-如果需要">项目运行说明 (如果需要)：</span></h3><ul>
 <li><p><strong>JDK :1.8         API :Android 30 Platform</strong></p>
 </li>
 <li><p>下载Android Studio (3.6版本及以上) 官网地址<a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/(%E5%AE%89%E8%A3%85%E5%8C%85800M%EF%BC%8C%E8%BF%99%E9%87%8C%E4%B8%8D%E7%BB%99%E5%87%BA)">https://developer.android.google.cn/studio/(安装包800M，这里不给出)</a></p>
@@ -370,12 +494,12 @@
 <li><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20201222225942614.png" alt="image-20201222225942614"></p>
 </li>
 </ul>
-<h2 id="游戏设计理念-回溯算法核心部分"><a href="#游戏设计理念-回溯算法核心部分" class="headerlink" title="游戏设计理念(回溯算法核心部分)"></a>游戏设计理念(回溯算法核心部分)</h2><p><strong>核心算法区域： “\app\src\main\java\com\example\sudoku”下的SudoHelper.java文件中</strong></p>
-<h3 id="核心思想："><a href="#核心思想：" class="headerlink" title="核心思想："></a>核心思想：</h3><pre><code>1. 先通过随机数，生成有n个元素的（n=30）残缺的数组
+<h2><span id="游戏设计理念回溯算法核心部分">游戏设计理念(回溯算法核心部分)</span></h2><p><strong>核心算法区域： “\app\src\main\java\com\example\sudoku”下的SudoHelper.java文件中</strong></p>
+<h3><span id="核心思想">核心思想：</span></h3><pre><code>1. 先通过随机数，生成有n个元素的（n=30）残缺的数组
 2. 通过solveSudoku()将残缺数组生成完整的数独
 3. 将完整的数独进行挖取，每挖一个元素都要确保该位置上的元素不能由其他元素替换
 </code></pre>
-<h3 id="isValid-方法："><a href="#isValid-方法：" class="headerlink" title="isValid()方法："></a><strong>isValid()方法</strong>：</h3><ul>
+<h3><span id="isvalid方法"><strong>isValid()方法</strong>：</span></h3><ul>
 <li><p>说明： 该方法用于判断数组中该行该列 填入数字c 时，是否在该行所有元素、该列所有元素或者该3*3区域中有与c相同的元素，如果有，则说明违反了规则，返回false;</p>
 </li>
 <li><p>```java<br> /**</p>
@@ -404,7 +528,7 @@ public static boolean isValid(int[][] board, int row, int col, int c) &#123;
 </code></pre>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### **backTrace()方法**</span><br><span class="line"></span><br><span class="line">* 说明：通过迭代进行数独的判断，由不完整的数独生成完整的数独</span><br><span class="line"></span><br><span class="line">* &#96;&#96;&#96;java</span><br><span class="line">  public static boolean backTrace(int[][] board, int row, int col,int num,int spr,int spc) &#123;</span><br><span class="line">          &#x2F;&#x2F;当row等于board.length的时候表示数独的最后一行全部读遍历完了，说明数独中的值是有效的，直接返回true</span><br><span class="line">          if (row &#x3D;&#x3D; board.length)</span><br><span class="line">              return true;</span><br><span class="line">          &#x2F;&#x2F;如果当前行的最后一列也遍历完了，就从下一行的第一列开始。这里的遍历</span><br><span class="line">          &#x2F;&#x2F;顺序是从第1行的第1列一直到最后一列，然后第二行的第一列一直到最后</span><br><span class="line">          if (col &#x3D;&#x3D; board.length)</span><br><span class="line">              return backTrace(board, row + 1, 0,num,spr,spc);</span><br><span class="line">          &#x2F;&#x2F;如果当前位置已经有数字了，就不能再填了，直接到这一行的下一列</span><br><span class="line">          if (board[row][col] !&#x3D; 0)</span><br><span class="line">              return backTrace(board, row, col + 1,num,spr,spc);</span><br><span class="line">          &#x2F;&#x2F;如果上面条件都不满足，就从1到9种选择一个合适的数字填入到数独中</span><br><span class="line">          for (int i &#x3D; 1; i &lt;&#x3D; 9; i++) &#123;</span><br><span class="line">              &#x2F;&#x2F;判断当前位置[row，col]是否可以放数字i，如果不能放再判断下一个能不能放</span><br><span class="line">              &#x2F;&#x2F;r行c列已经不能再填入num了，用于isOnlyOne方法</span><br><span class="line">              if(i&#x3D;&#x3D;num&amp;&amp;spr&#x3D;&#x3D;row&amp;&amp;spc&#x3D;&#x3D;col)</span><br><span class="line">                  continue;</span><br><span class="line">              if (!isValid(board, row, col, i))</span><br><span class="line">                  continue;</span><br><span class="line">              &#x2F;&#x2F;如果能放数字i，就把数字i放进去</span><br><span class="line">              board[row][col] &#x3D; i;</span><br><span class="line">              &#x2F;&#x2F;如果成功就直接返回，不需要再尝试了</span><br><span class="line">              if (backTrace(board, row, col,num,spr,spc))</span><br><span class="line">                  return true;</span><br><span class="line">              &#x2F;&#x2F;否则就撤销重新选择</span><br><span class="line">              board[row][col] &#x3D; 0;</span><br><span class="line">          &#125;</span><br><span class="line">          &#x2F;&#x2F;如果当前位置[row，col]不能放任何数字，直接返回false</span><br><span class="line">          return false;</span><br><span class="line">      &#125;</span><br><span class="line">  </span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="isOnlyOne-方法"><a href="#isOnlyOne-方法" class="headerlink" title="isOnlyOne()方法"></a>isOnlyOne()方法</h3><ul>
+<h3><span id="isonlyone方法">isOnlyOne()方法</span></h3><ul>
 <li><p>说明：判断该行该列上的数字，是否能被其他1-9的数字替代，且不违反规则</p>
 </li>
 <li><p>```java<br> /**</p>
@@ -428,33 +552,33 @@ public static boolean isOnlyOne(int i,int j,int[][] b)&#123;  //判断在i,j挖�
 </code></pre>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### solveSudoku方法()</span><br><span class="line"></span><br><span class="line">* 说明： 用于判断不完整的board数组能否生成为二维数独，如果能，则返回true，且会更改board的元素值，num作为isOnlyOne()方法中的特殊判断条件，检验除了num数字，其他数字是否能填入数组使之构成数独。</span><br><span class="line"></span><br><span class="line">* solveSudoku_noChange() 功能与solveSudoku()方法一致，区别是不更改参数board二维数组的值，仅给出是否能生成数独的结果。</span><br><span class="line"></span><br><span class="line">* &#96;&#96;&#96;java</span><br><span class="line">   &#x2F;&#x2F;num 用做isOnlyOne()的特殊判断标志</span><br><span class="line">      &#x2F;&#x2F;spr spc表示表示该位置上的元素不能填入num值</span><br><span class="line">      public static boolean solveSudoku(int[][] board,int num,int spr,int spc) &#123;</span><br><span class="line">          return backTrace(board, 0, 0,num,spr,spc);</span><br><span class="line">      &#125;</span><br><span class="line">    </span><br><span class="line">      public static boolean solveSudoku_noChange(int[][] board,int num,int spr,int spc) &#123;</span><br><span class="line">          int temp[][]&#x3D;new int[9][9];</span><br><span class="line">          for(int i&#x3D;0;i&lt;9;i++)&#123;</span><br><span class="line">              System.arraycopy(board[i],0,temp[i],0,9);</span><br><span class="line">          &#125;</span><br><span class="line">          return backTrace(temp, 0, 0,num,spr,spc);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="generateSudoWithLevel-方法"><a href="#generateSudoWithLevel-方法" class="headerlink" title="generateSudoWithLevel()方法"></a>generateSudoWithLevel()方法</h3><ul>
+<h3><span id="generatesudowithlevel方法">generateSudoWithLevel()方法</span></h3><ul>
 <li>说明：通过传入参数 int level，生成解法唯一的残缺数独</li>
 <li>流程图：完整图片文件在源文件中</li>
 <li><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="算法流程图"></li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[][] generateSudoWithLevel(<span class="keyword">int</span> level)&#123;</span><br><span class="line">     <span class="keyword">int</span> temp[][]=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">9</span>][<span class="number">9</span>];</span><br><span class="line">     Random rand=<span class="keyword">new</span> Random();</span><br><span class="line">     <span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line">     <span class="comment">//对不同难度进行挖取个数count的选择</span></span><br><span class="line">     <span class="keyword">switch</span> (level)&#123;</span><br><span class="line">         <span class="keyword">case</span> LEVEL_NORMAL:</span><br><span class="line">             count = <span class="number">25</span>;</span><br><span class="line">             <span class="keyword">break</span>;</span><br><span class="line">         <span class="keyword">case</span> LEVLE_EASY:</span><br><span class="line">             count = <span class="number">20</span>;</span><br><span class="line">             <span class="keyword">break</span>;</span><br><span class="line">         <span class="keyword">case</span> LEVLE_DIF:</span><br><span class="line">             count = <span class="number">35</span>;</span><br><span class="line">             <span class="keyword">break</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">int</span> calloc_num = <span class="number">30</span>;    <span class="comment">//最初挖取的次数</span></span><br><span class="line">     <span class="keyword">int</span> count_fresh = <span class="number">0</span>;    <span class="comment">//重新寻找次数</span></span><br><span class="line">     <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">     <span class="keyword">do</span> &#123;</span><br><span class="line">         <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">             <span class="keyword">while</span> (calloc_num &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                 <span class="keyword">int</span> i = rand.nextInt(<span class="number">9</span>);</span><br><span class="line">                 <span class="keyword">int</span> j = rand.nextInt(<span class="number">9</span>);</span><br><span class="line">                 <span class="keyword">if</span> (temp[i][j] == <span class="number">0</span>) &#123;</span><br><span class="line">                     <span class="keyword">int</span> num = rand.nextInt(<span class="number">9</span>) + <span class="number">1</span>;</span><br><span class="line">                     <span class="keyword">if</span> (isValid(temp, i, j, num)) &#123;</span><br><span class="line">                         temp[i][j] = num;</span><br><span class="line">                         calloc_num--;</span><br><span class="line">                     &#125;</span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;</span><br><span class="line">             <span class="comment">//如果能生成完整的数独 则退出循环进行下一步</span></span><br><span class="line">             <span class="keyword">if</span> (solveSudoku(temp, <span class="number">0</span>,-<span class="number">1</span>,-<span class="number">1</span>)) <span class="keyword">break</span>;</span><br><span class="line">             <span class="comment">//否则重新开始</span></span><br><span class="line">             calloc_num = <span class="number">30</span>;</span><br><span class="line">             temp = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">9</span>][<span class="number">9</span>];</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="comment">//对完整的数独进行挖取，并确保每一次挖取的元素不能被其他数字替代</span></span><br><span class="line">         <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count + <span class="number">1</span>; i++) &#123;</span><br><span class="line">             <span class="keyword">int</span> r = rand.nextInt(<span class="number">9</span>);</span><br><span class="line">             <span class="keyword">int</span> c = rand.nextInt(<span class="number">9</span>);</span><br><span class="line">             <span class="comment">//如果已经挖取了count个元素，且更新次数&lt;20</span></span><br><span class="line">             <span class="keyword">if</span> (i == count &amp;&amp; count_fresh &lt;= <span class="number">20</span>) &#123;</span><br><span class="line">                 <span class="keyword">return</span> temp;</span><br><span class="line">             &#125;</span><br><span class="line">             <span class="comment">//该位置有值，且能不能被其他值替换，则挖取这个位置的值</span></span><br><span class="line">             <span class="keyword">if</span> (temp[r][c] != <span class="number">0</span> &amp;&amp; isOnlyOne(r, c, temp))</span><br><span class="line">                 <span class="keyword">continue</span>;</span><br><span class="line">             <span class="comment">//如果能被其他元素取代，则重新寻找次数+1</span></span><br><span class="line">             count_fresh++;</span><br><span class="line">             <span class="comment">//如果寻找次数过多，说明有这是个不太理想的数独，继续寻找可能耗时</span></span><br><span class="line">             <span class="comment">//则重新生成新的数独</span></span><br><span class="line">             <span class="keyword">if</span> (count_fresh &gt; <span class="number">20</span>) &#123;</span><br><span class="line">                 flag = <span class="keyword">true</span>;</span><br><span class="line">                 <span class="keyword">break</span>;</span><br><span class="line">             &#125;</span><br><span class="line">             i--;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="comment">//进行数据的重置以便重新生成数独</span></span><br><span class="line">         count_fresh = <span class="number">0</span>;</span><br><span class="line">         calloc_num = <span class="number">30</span>;</span><br><span class="line">         temp = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">9</span>][<span class="number">9</span>];</span><br><span class="line">     &#125;<span class="keyword">while</span> (flag) ;</span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h3 id="流程概括"><a href="#流程概括" class="headerlink" title="流程概括"></a>流程概括</h3><ol>
+<h3><span id="流程概括">流程概括</span></h3><ol>
 <li>构建一个不完整的矩阵，其中矩阵中N个元素被填写1-9的数字，且均符合数独的规则 (isValid()==true)</li>
 <li>通过不完整的矩阵，又solveSudo(方法生成一个完整的数独矩阵</li>
 <li>将生成的完整数独矩阵进行元素挖取，每挖一个元素都要保证被挖取的元素不能被其他数字替代(数独解的唯一性)(isOnlyOne())</li>
 <li>3步骤中如果该元素不满足时 重新搜索记录+1,当重新搜索记录大于一定值时，说明这个数独不是一个好的数独，则重新进入步骤一，构建新的数独；反之，则就得到了解唯一的数独，输出即可。</li>
 </ol>
-<h3 id="实验测试—具体耗时"><a href="#实验测试—具体耗时" class="headerlink" title="实验测试—具体耗时"></a>实验测试—具体耗时</h3><ul>
+<h3><span id="实验测试具体耗时">实验测试—具体耗时</span></h3><ul>
 <li>使用generateSudoWithLevel(int level)函数在IDEA平台上进行数独生成 N次实验，记录每N次的耗时，多次测量并取平均值，画出表格如下</li>
 <li><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20201222111013713.png" alt="image-20201222111013713"></li>
 <li><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20201222110639573.png" alt="image-20201222110639573"></li>
 </ul>
-<h3 id="实验分析"><a href="#实验分析" class="headerlink" title="实验分析"></a>实验分析</h3><ul>
+<h3><span id="实验分析">实验分析</span></h3><ul>
 <li>随着难度增加， count 增加，生成完整数独后挖取的元素个数也增加，所以耗时必然是一个递增的过程。但在算法中因为涉及到calloc_fresh ，统计过量寻找可删除元素的判断，所以在遇到不太理想的数独时会进行重新生成操作，使得不同难度下单次生成数独的时间可能有差异。实验中的空间复杂度 : O(c)  (用到一个9x9的二维数组和常数个变量),  渐进复杂度上界  &gt;=O(9^{9x9})  (原因：加入判断calloc_fresh大于一定值时会重新生成数独重新挖取）</li>
 </ul>
-<h2 id="游戏开发中的其他想法和问题"><a href="#游戏开发中的其他想法和问题" class="headerlink" title="游戏开发中的其他想法和问题"></a>游戏开发中的其他想法和问题</h2><p>开发中还涉及到一些控件动态生成，UI布局选择和游戏模式的思考。如果老师对这部分有兴趣，请移步主目录中的 README.md 或者 README.pdf 文件</p>
+<h2><span id="游戏开发中的其他想法和问题">游戏开发中的其他想法和问题</span></h2><p>开发中还涉及到一些控件动态生成，UI布局选择和游戏模式的思考。如果老师对这部分有兴趣，请移步主目录中的 README.md 或者 README.pdf 文件</p>
 <p>我把开发过程中的想法和解决方法写在了上述文档中</p>
 <p>Github上项目不定时更新  <a target="_blank" rel="noopener" href="https://github.com/Yunlong626/SudokuGame">https://github.com/Yunlong626/SudokuGame</a></p>
-<p>邮箱 <a href="mailto:&#52;&#x30;&#x31;&#x31;&#x37;&#x37;&#x39;&#x32;&#51;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;">&#52;&#x30;&#x31;&#x31;&#x37;&#x37;&#x39;&#x32;&#51;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
-<h2 id="课设总结"><a href="#课设总结" class="headerlink" title="课设总结"></a>课设总结</h2><p>​    这次课设让我学习了回溯算法，重新认识了数独游戏的定义，让我对求解N皇后和解数独等较为复杂的问题时有了新的思路，解决数独问题还可以通过位运算、舞蹈链等算法，回溯算法只是入门，数据结构和算法对我们来说，课程结束了但是还有很多很多需要今后深入学习。 通过这次课设也让我回顾了之前所学习的java语言和 Android开发的一些基础，发现自己的基础还是不是很牢固，在课设后还需要多巩固多总结。</p>
-<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>​    感谢老师的阅读，如果在测试中发现了任何的异常或者UI不兼容问题，麻烦老师指出。我会及时对项目进行更新</p>
+<p>邮箱 <a href="mailto:&#x34;&#48;&#x31;&#49;&#55;&#55;&#x39;&#x32;&#x33;&#x40;&#x71;&#113;&#x2e;&#x63;&#x6f;&#x6d;">&#x34;&#48;&#x31;&#49;&#55;&#55;&#x39;&#x32;&#x33;&#x40;&#x71;&#113;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<h2><span id="课设总结">课设总结</span></h2><p>​    这次课设让我学习了回溯算法，重新认识了数独游戏的定义，让我对求解N皇后和解数独等较为复杂的问题时有了新的思路，解决数独问题还可以通过位运算、舞蹈链等算法，回溯算法只是入门，数据结构和算法对我们来说，课程结束了但是还有很多很多需要今后深入学习。 通过这次课设也让我回顾了之前所学习的java语言和 Android开发的一些基础，发现自己的基础还是不是很牢固，在课设后还需要多巩固多总结。</p>
+<h2><span id="感谢">感谢</span></h2><p>​    感谢老师的阅读，如果在测试中发现了任何的异常或者UI不兼容问题，麻烦老师指出。我会及时对项目进行更新</p>
 
       
     </div>
@@ -565,6 +689,10 @@ public static boolean isOnlyOne(int i,int j,int[][] b)&#123;  //判断在i,j挖�
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/pipi.jpg"
+                alt="" />
+            
               <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -574,7 +702,7 @@ public static boolean isOnlyOne(int i,int j,int[][] b)&#123;  //判断在i,j挖�
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/%20%7C%7C%20archive">
+                <a href="/archives/%7C%7C%20archive">
               
                   <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">posts</span>
@@ -609,6 +737,28 @@ public static boolean isOnlyOne(int i,int j,int[][] b)&#123;  //判断在i,j挖�
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yunlong626" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="401177923@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="401177923" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
 
           
           
@@ -631,7 +781,7 @@ public static boolean isOnlyOne(int i,int j,int[][] b)&#123;  //判断在i,j挖�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F-%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95-%E2%80%94%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="nav-number">1.</span> <span class="nav-text">数独游戏 (回溯算法)—数据结构课程设计实验报告</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%B8%E6%88%8F%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.</span> <span class="nav-text">游戏介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%8A%9F%E8%83%BD%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">实现功能：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%B8%E6%88%8F%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%EF%BC%9A"><span class="nav-number">1.1.3.</span> <span class="nav-text">游戏操作说明：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E8%BF%90%E8%A1%8C%E8%AF%B4%E6%98%8E-%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81-%EF%BC%9A"><span class="nav-number">1.1.4.</span> <span class="nav-text">项目运行说明 (如果需要)：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5-%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E6%A0%B8%E5%BF%83%E9%83%A8%E5%88%86"><span class="nav-number">1.2.</span> <span class="nav-text">游戏设计理念(回溯算法核心部分)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3%EF%BC%9A"><span class="nav-number">1.2.1.</span> <span class="nav-text">核心思想：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isValid-%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-number">1.2.2.</span> <span class="nav-text">isValid()方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isOnlyOne-%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.3.</span> <span class="nav-text">isOnlyOne()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#generateSudoWithLevel-%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.4.</span> <span class="nav-text">generateSudoWithLevel()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B%E6%A6%82%E6%8B%AC"><span class="nav-number">1.2.5.</span> <span class="nav-text">流程概括</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%B5%8B%E8%AF%95%E2%80%94%E5%85%B7%E4%BD%93%E8%80%97%E6%97%B6"><span class="nav-number">1.2.6.</span> <span class="nav-text">实验测试—具体耗时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E5%88%86%E6%9E%90"><span class="nav-number">1.2.7.</span> <span class="nav-text">实验分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%85%B6%E4%BB%96%E6%83%B3%E6%B3%95%E5%92%8C%E9%97%AE%E9%A2%98"><span class="nav-number">1.3.</span> <span class="nav-text">游戏开发中的其他想法和问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BE%E8%AE%BE%E6%80%BB%E7%BB%93"><span class="nav-number">1.4.</span> <span class="nav-text">课设总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%84%9F%E8%B0%A2"><span class="nav-number">1.5.</span> <span class="nav-text">感谢</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">数独游戏 (回溯算法)—数据结构课程设计实验报告</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">游戏介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.2.</span> <span class="nav-text">实现功能：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.3.</span> <span class="nav-text">游戏操作说明：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.4.</span> <span class="nav-text">项目运行说明 (如果需要)：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">游戏设计理念(回溯算法核心部分)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.1.</span> <span class="nav-text">核心思想：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.2.</span> <span class="nav-text">isValid()方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.3.</span> <span class="nav-text">isOnlyOne()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.4.</span> <span class="nav-text">generateSudoWithLevel()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.5.</span> <span class="nav-text">流程概括</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.6.</span> <span class="nav-text">实验测试—具体耗时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.7.</span> <span class="nav-text">实验分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">游戏开发中的其他想法和问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.4.</span> <span class="nav-text">课设总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.5.</span> <span class="nav-text">感谢</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -651,7 +801,7 @@ public static boolean isOnlyOne(int i,int j,int[][] b)&#123;  //判断在i,j挖�
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2020/12/28 &mdash; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -669,12 +819,32 @@ public static boolean isOnlyOne(int i,int j,int[][] b)&#123;  //判断在i,j挖�
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
@@ -716,6 +886,8 @@ public static boolean isOnlyOne(int i,int j,int[][] b)&#123;  //判断在i,j挖�
   
 
 
+  
+
 
 
 
@@ -756,6 +928,11 @@ public static boolean isOnlyOne(int i,int j,int[][] b)&#123;  //判断在i,j挖�
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
 
   
 
@@ -768,6 +945,13 @@ public static boolean isOnlyOne(int i,int j,int[][] b)&#123;  //判断在i,j挖�
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
@@ -816,6 +1000,323 @@ public static boolean isOnlyOne(int i,int j,int[][] b)&#123;  //判断在i,j挖�
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 

@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="Android面试总结  CASIPC进程间通信Inter-Process Communication   Windows：通过剪切板、管道、油槽等进行进程间通讯。 Linux：通过命名空间、共享内容、信号量等进行进程间通讯。 Android：没有完全继承Linux，比如，其独具特色的通讯方式有Binder、Socket等等。">
+<meta name="description" content="Android面试总结   CAS IPC进程间通信 线程和进程的关系 Android中的IPC AIDL Binder 序列化的两种方式       Andoird 启动原理 事件分发机制 dispatchTouchEvent onInterceptTouchEvent onTouchEvent   View原理 Activty的启动顺序 Activity启动模式 对activity进行缓存 A">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android面试总结">
 <meta property="og:url" content="http://example.com/2021/01/10/Android%E9%9D%A2%E8%AF%95/index.html">
 <meta property="og:site_name" content="ZYL的博客">
-<meta property="og:description" content="Android面试总结  CASIPC进程间通信Inter-Process Communication   Windows：通过剪切板、管道、油槽等进行进程间通讯。 Linux：通过命名空间、共享内容、信号量等进行进程间通讯。 Android：没有完全继承Linux，比如，其独具特色的通讯方式有Binder、Socket等等。">
+<meta property="og:description" content="Android面试总结   CAS IPC进程间通信 线程和进程的关系 Android中的IPC AIDL Binder 序列化的两种方式       Andoird 启动原理 事件分发机制 dispatchTouchEvent onInterceptTouchEvent onTouchEvent   View原理 Activty的启动顺序 Activity启动模式 对activity进行缓存 A">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210321133957552.png">
 <meta property="og:image" content="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210320184127616.png">
@@ -121,7 +121,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -205,7 +205,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -214,8 +214,38 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -225,9 +255,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -261,7 +325,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/pipi.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -327,7 +391,43 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  4.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  19
+                </span>
+              
+            </div>
           
 
           
@@ -345,16 +445,161 @@
       
 
       
-        <h1 id="Android面试总结"><a href="#Android面试总结" class="headerlink" title="Android面试总结"></a>Android面试总结</h1><!-- toc -->
+        <h1><span id="android面试总结">Android面试总结</span></h1><!-- toc -->
 
-<h2 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a>CAS</h2><h3 id="IPC进程间通信"><a href="#IPC进程间通信" class="headerlink" title="IPC进程间通信"></a>IPC进程间通信</h3><p>Inter-Process Communication </p>
+<ul>
+<li><a href="#cas">CAS</a><ul>
+<li><a href="#ipc%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1">IPC进程间通信</a><ul>
+<li><a href="#%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%85%B3%E7%B3%BB">线程和进程的关系</a></li>
+<li><a href="#android%E4%B8%AD%E7%9A%84ipc">Android中的IPC</a><ul>
+<li><a href="#aidl">AIDL</a></li>
+<li><a href="#binder">Binder</a></li>
+<li><a href="#%E5%BA%8F%E5%88%97%E5%8C%96%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F">序列化的两种方式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#andoird">Andoird</a><ul>
+<li><a href="#%E5%90%AF%E5%8A%A8%E5%8E%9F%E7%90%86">启动原理</a></li>
+<li><a href="#%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6">事件分发机制</a><ul>
+<li><a href="#dispatchtouchevent">dispatchTouchEvent</a></li>
+<li><a href="#onintercepttouchevent">onInterceptTouchEvent</a></li>
+<li><a href="#ontouchevent">onTouchEvent</a></li>
+</ul>
+</li>
+<li><a href="#view%E5%8E%9F%E7%90%86">View原理</a><ul>
+<li><a href="#activty%E7%9A%84%E5%90%AF%E5%8A%A8%E9%A1%BA%E5%BA%8F">Activty的启动顺序</a></li>
+<li><a href="#activity%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F">Activity启动模式</a></li>
+<li><a href="#%E5%AF%B9activity%E8%BF%9B%E8%A1%8C%E7%BC%93%E5%AD%98">对activity进行缓存</a></li>
+<li><a href="#activity%E9%97%B4%E9%80%9A%E4%BF%A1">Activity间通信</a></li>
+<li><a href="#view%E7%BB%93%E6%9E%84">View结构</a></li>
+<li><a href="#view%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B">View绘制流程</a><ul>
+<li><a href="#measure">measure</a></li>
+<li><a href="#layout">layout</a></li>
+<li><a href="#draw">draw</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%A8%AA%E7%AB%96%E5%B1%8F%E5%88%87%E6%8D%A2%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">横竖屏切换的生命周期</a></li>
+<li><a href="#gradle">Gradle</a><ul>
+<li><a href="#%E6%98%AF%E4%BB%80%E4%B9%88">是什么</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">配置文件</a></li>
+</ul>
+</li>
+<li><a href="#fragment">Fragment</a><ul>
+<li><a href="#%E4%B8%8Eactivity%E9%80%9A%E4%BF%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F">与Activity通信的几种方式</a></li>
+</ul>
+</li>
+<li><a href="#handler">Handler</a><ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFhandler">什么是Handler</a></li>
+<li><a href="#%E9%97%AE%E9%A2%98%E7%9A%84%E5%87%BA%E5%8F%91%E7%82%B9">问题的出发点</a></li>
+<li><a href="#%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86">通信原理</a></li>
+<li><a href="#%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1">线程通信</a><ul>
+<li><a href="#asynctask">AsyncTask</a></li>
+</ul>
+</li>
+<li><a href="#handlerthread">HandlerThread</a></li>
+<li><a href="#%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98">面试问题</a></li>
+<li><a href="#%E9%A2%9D%E5%A4%96%E7%9A%84%E9%97%AE%E9%A2%98">额外的问题</a></li>
+</ul>
+</li>
+<li><a href="#intent">Intent</a></li>
+<li><a href="#recycleview">RecycleView</a><ul>
+<li><a href="#%E4%B8%8Elistview%E7%9A%84%E4%B8%8D%E5%90%8C%E7%82%B9">与ListVIew的不同点</a></li>
+<li><a href="#%E6%BB%9A%E5%8A%A8%E6%9C%BA%E5%88%B6">滚动机制</a></li>
+<li><a href="#%E5%9B%9B%E7%BA%A7%E7%BC%93%E5%AD%98">四级缓存</a></li>
+<li><a href="#%E5%B5%8C%E5%A5%97%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E6%BB%91%E5%8A%A8%E5%86%B2%E7%AA%81">嵌套如何解决滑动冲突</a></li>
+<li><a href="#%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B%E5%92%8C%E5%A4%8D%E7%94%A8%E6%9C%BA%E5%88%B6">具体流程和复用机制</a></li>
+<li><a href="#%E5%86%85%E9%83%A8%E7%B1%BB">内部类</a><ul>
+<li><a href="#recyler">Recyler</a></li>
+<li><a href="#recycledviewpool">RecycledViewPool</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%B9%E6%B3%95">方法</a></li>
+<li><a href="#layoutmanager">LayoutManager</a></li>
+</ul>
+</li>
+<li><a href="#android%E5%90%AF%E5%8A%A8%E5%8E%9F%E7%90%86">Android启动原理</a></li>
+<li><a href="#%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D">屏幕适配</a><ul>
+<li><a href="#%E6%A6%82%E5%BF%B5">概念</a></li>
+</ul>
+</li>
+<li><a href="#framework">Framework</a><ul>
+<li><a href="#%E6%A6%82%E5%BF%B5-1">概念</a></li>
+</ul>
+</li>
+<li><a href="#contentprovider">ContentProvider</a><ul>
+<li><a href="#%E4%BD%9C%E7%94%A8">作用</a></li>
+</ul>
+</li>
+<li><a href="#okhttp">OkHttp</a><ul>
+<li><a href="#%E6%A0%B8%E5%BF%83%E7%B1%BB">核心类</a></li>
+<li><a href="#%E6%B5%81%E7%A8%8B%E5%88%86%E8%BF%B0">流程分述</a><ul>
+<li><a href="#1-%E5%A6%82%E4%BD%95%E5%8F%91%E9%80%81">1. 如何发送</a></li>
+<li><a href="#2-%E8%A2%AB%E8%B0%81%E5%A4%84%E7%90%86">2. 被谁处理</a></li>
+<li><a href="#3-%E5%A6%82%E4%BD%95%E7%BB%B4%E6%8A%A4">3. 如何维护</a></li>
+<li><a href="#4-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F">4. 建造者模式</a></li>
+<li><a href="#5-%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F">5. 责任链模式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#retrofit">Retrofit</a><ul>
+<li><a href="#%E5%A5%BD%E5%A4%84">好处</a></li>
+<li><a href="#%E5%8E%9F%E7%90%86">原理</a><ul>
+<li><a href="#%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86">动态代理</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B1%BB">类</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">设计模式</a></li>
+<li><a href="#%E5%B7%AE%E5%BC%82">差异</a></li>
+<li><a href="#%E9%97%AE%E9%A2%98">问题</a></li>
+</ul>
+</li>
+<li><a href="#volley">Volley</a></li>
+<li><a href="#%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E6%A1%86%E6%9E%B6">图片加载框架</a></li>
+<li><a href="#glide">Glide</a><ul>
+<li><a href="#from">from</a></li>
+<li><a href="#load">load</a></li>
+<li><a href="#into">into</a></li>
+</ul>
+</li>
+<li><a href="#%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-1">面试问题</a><ul>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%90%E7%BA%BF%E7%A8%8B%E4%B8%8D%E8%83%BD%E6%9B%B4%E6%96%B0ui">为什么子线程不能更新UI</a></li>
+<li><a href="#viewpost-%E5%92%8C-handlerpost%E7%9A%84%E5%8C%BA%E5%88%AB">View.post 和 Handler.post的区别</a></li>
+<li><a href="#gradle%E5%88%B0%E5%BA%95%E6%98%AF%E4%B8%AA%E5%95%A5">Gradle到底是个啥</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#mysql">Mysql</a><ul>
+<li><a href="#%E5%BC%95%E6%93%8E">引擎</a><ul>
+<li><a href="#myiasm">MyIAsm</a></li>
+<li><a href="#inoodb">Inoodb</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B4%A2%E5%BC%95">索引</a><ul>
+<li><a href="#myiasm%E5%92%8Cinoodb%E7%9A%84%E4%B8%8D%E5%90%8C">MyIAsm和Inoodb的不同</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86">计算机原理</a></li>
+<li><a href="#%E9%9D%A2%E8%AF%95">面试</a></li>
+</ul>
+<!-- tocstop -->
+
+<h2><span id="cas">CAS</span></h2><h3><span id="ipc进程间通信">IPC进程间通信</span></h3><p>Inter-Process Communication </p>
 <ul>
 <li>Windows：通过剪切板、管道、油槽等进行进程间通讯。</li>
 <li>Linux：通过命名空间、共享内容、信号量等进行进程间通讯。</li>
 <li>Android：没有完全继承Linux，比如，其独具特色的通讯方式有Binder、Socket等等。</li>
 <li><span id="more"></span></li>
 </ul>
-<h4 id="线程和进程的关系"><a href="#线程和进程的关系" class="headerlink" title="线程和进程的关系"></a>线程和进程的关系</h4><p>进程： 一个执行单元 一个程序或者应用</p>
+<h4><span id="线程和进程的关系">线程和进程的关系</span></h4><p>进程： 一个执行单元 一个程序或者应用</p>
 <p>进程是程序运行和资源分配的基本单位</p>
 <p>线程： CPU调度的最小单元  有限的系统资源</p>
 <p>是cpu调度和分派的基本单位</p>
@@ -364,11 +609,11 @@
 <li>copy_from_user（）：将用户空间的数据拷贝到内核空间</li>
 <li>copy_to_user（）：将内核空间的数据拷贝到用户空间</li>
 </ol>
-<h4 id="Android中的IPC"><a href="#Android中的IPC" class="headerlink" title="Android中的IPC"></a>Android中的IPC</h4><h5 id="AIDL"><a href="#AIDL" class="headerlink" title="AIDL"></a>AIDL</h5><p>AIDL     <strong>Android Interface definition language</strong></p>
+<h4><span id="android中的ipc">Android中的IPC</span></h4><h5><span id="aidl">AIDL</span></h5><p>AIDL     <strong>Android Interface definition language</strong></p>
 <p>C/S 端的AIDL名称  （包名+类名）必须一致</p>
 <p>内部类 Proxy  Stub  都implementes这个接口</p>
 <p>AIDL层双方通信方式类似 符号引用</p>
-<h5 id="Binder"><a href="#Binder" class="headerlink" title="Binder"></a>Binder</h5><p>设计基于C/S结构  客户端进程获取服务端进程的代理，并通过向这个代理借口方法中读写数据来完成进程间的数据通信</p>
+<h5><span id="binder">Binder</span></h5><p>设计基于C/S结构  客户端进程获取服务端进程的代理，并通过向这个代理借口方法中读写数据来完成进程间的数据通信</p>
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210321133957552.png" alt="image-20210321133957552"></p>
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210320184127616.png" alt="image-20210320184127616"></p>
 <p><img src="https://imgconvert.csdnimg.cn/aHR0cDovL3VwbG9hZC1pbWFnZXMuamlhbnNodS5pby91cGxvYWRfaW1hZ2VzLzk0NDM2NS1kM2M3OGIxOTNjM2U4YTM4LnBuZz9pbWFnZU1vZ3IyL2F1dG8tb3JpZW50L3N0cmlwJTdDaW1hZ2VWaWV3Mi8yL3cvMTI0MA" alt="img"></p>
@@ -386,29 +631,29 @@
 <p>Server：注册Service到ServiceManager</p>
 <p>ServiceManager： 管理这些Service 并向Client提供相关的接口</p>
 <p>Android系统会为每一个应用分配一个唯一的UID，具有相同UID的应用才能共享数据。要求两个应用具有相同的ShareUID并且签名相同才可以跑在同一个进程中。在这种情况下，它们可以互相访问对方的私有数据，比如data目录、组件信息等，不管它们是否跑在同一个进程中。当然如果它们跑在同一个进程中，那么除了能共享data目录、组件信息，还可以共享内存数据，或者说它们看起来就像是一个应用的两个部分。</p>
-<h5 id="序列化的两种方式"><a href="#序列化的两种方式" class="headerlink" title="序列化的两种方式"></a>序列化的两种方式</h5><p>Parcelable</p>
+<h5><span id="序列化的两种方式">序列化的两种方式</span></h5><p>Parcelable</p>
 <p>Serializable</p>
-<h2 id="Andoird"><a href="#Andoird" class="headerlink" title="Andoird"></a>Andoird</h2><h3 id="启动原理"><a href="#启动原理" class="headerlink" title="启动原理"></a>启动原理</h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/12de32b31836">https://www.jianshu.com/p/12de32b31836</a></p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h3 id="事件分发机制"><a href="#事件分发机制" class="headerlink" title="事件分发机制"></a>事件分发机制</h3><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210301164920245.png" alt="image-20210301164920245"></p>
-<h4 id="dispatchTouchEvent"><a href="#dispatchTouchEvent" class="headerlink" title="dispatchTouchEvent"></a>dispatchTouchEvent</h4><p>true ： 已经进行了处理，不在向下传递，停止分发</p>
+<h2><span id="andoird">Andoird</span></h2><h3><span id="启动原理">启动原理</span></h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/12de32b31836">https://www.jianshu.com/p/12de32b31836</a></p>
+<h2><span id></span></h2><h3><span id="事件分发机制">事件分发机制</span></h3><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210301164920245.png" alt="image-20210301164920245"></p>
+<h4><span id="dispatchtouchevent">dispatchTouchEvent</span></h4><p>true ： 已经进行了处理，不在向下传递，停止分发</p>
 <p>false： 未处理，继续分发    一般默认返回false</p>
-<h4 id="onInterceptTouchEvent"><a href="#onInterceptTouchEvent" class="headerlink" title="onInterceptTouchEvent"></a>onInterceptTouchEvent</h4><p>Viewgroup特有</p>
+<h4><span id="onintercepttouchevent">onInterceptTouchEvent</span></h4><p>Viewgroup特有</p>
 <p>事件传入 dispatch内部 调用这个方法</p>
 <p>false ： 子View 调用dispatc…</p>
 <p>true：交给该Viewgourp的onTouchEvent方法处理 ，不过也要看他自己能不能有没有ontouchEvent</p>
-<h4 id="onTouchEvent"><a href="#onTouchEvent" class="headerlink" title="onTouchEvent"></a>onTouchEvent</h4><p>Activity层</p>
+<h4><span id="ontouchevent">onTouchEvent</span></h4><p>Activity层</p>
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210301174949296.png" alt="image-20210301174949296"></p>
 <p>ViewGroup层</p>
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210301180054892.png" alt="image-20210301180054892"></p>
 <p>View层</p>
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210301182854640.png" alt="image-20210301182854640"></p>
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210301182955527.png" alt="image-20210301182955527"></p>
-<h3 id="View原理"><a href="#View原理" class="headerlink" title="View原理"></a>View原理</h3><h4 id="Activty的启动顺序"><a href="#Activty的启动顺序" class="headerlink" title="Activty的启动顺序"></a>Activty的启动顺序</h4><p>onCreate – onStart —onResume </p>
+<h3><span id="view原理">View原理</span></h3><h4><span id="activty的启动顺序">Activty的启动顺序</span></h4><p>onCreate – onStart —onResume </p>
 <p>home键返回后  onPause  – onStop   从后台返回时  onStart — onResume</p>
 <p>打开新的activity’时  onpause  –onStop</p>
 <p>关闭程序后  onPuase – onStop – onDestroy – onDetachedFromWindow</p>
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210314102121692.png" alt="image-20210314102121692"></p>
-<h4 id="Activity启动模式"><a href="#Activity启动模式" class="headerlink" title="Activity启动模式"></a>Activity启动模式</h4><ol>
+<h4><span id="activity启动模式">Activity启动模式</span></h4><ol>
 <li><p>standard 默认标准模式，每启动一个都会创建实例</p>
 <p>应用： B站视频打开</p>
 </li>
@@ -420,49 +665,49 @@
 <p>前台任务栈  后台任务栈</p>
 </li>
 </ol>
-<h4 id="对activity进行缓存"><a href="#对activity进行缓存" class="headerlink" title="对activity进行缓存"></a>对activity进行缓存</h4><ul>
+<h4><span id="对activity进行缓存">对activity进行缓存</span></h4><ul>
 <li>打开新的Activity / Home键 / 电源键  onStop后会调用onSaveInstanceState 方法，可以在参数bundle中进行保存</li>
 <li>onRestoreInstanceState 对数据进行恢复</li>
 </ul>
-<h4 id="Activity间通信"><a href="#Activity间通信" class="headerlink" title="Activity间通信"></a>Activity间通信</h4><ol>
+<h4><span id="activity间通信">Activity间通信</span></h4><ol>
 <li>Intent – Bundle</li>
 <li>Service</li>
 </ol>
-<h4 id="View结构"><a href="#View结构" class="headerlink" title="View结构"></a>View结构</h4><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210314103217599.png" alt="image-20210314103217599"></p>
+<h4><span id="view结构">View结构</span></h4><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210314103217599.png" alt="image-20210314103217599"></p>
 <p>View 树结构</p>
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210314103242042.png" alt="image-20210314103242042"></p>
-<h4 id="View绘制流程"><a href="#View绘制流程" class="headerlink" title="View绘制流程"></a>View绘制流程</h4><h5 id="measure"><a href="#measure" class="headerlink" title="measure"></a>measure</h5><h5 id="layout"><a href="#layout" class="headerlink" title="layout"></a>layout</h5><h5 id="draw"><a href="#draw" class="headerlink" title="draw"></a>draw</h5><h3 id="横竖屏切换的生命周期"><a href="#横竖屏切换的生命周期" class="headerlink" title="横竖屏切换的生命周期"></a>横竖屏切换的生命周期</h3><h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h3><h4 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h4><p>Gradle是一个基于Apache Ant和Apache Maven概念的项目自动化构建开源工具。它使用一种基于Groovy的特定领域语言(DSL)来声明项目设置，抛弃了基于XML的各种繁琐配置。</p>
+<h4><span id="view绘制流程">View绘制流程</span></h4><h5><span id="measure">measure</span></h5><h5><span id="layout">layout</span></h5><h5><span id="draw">draw</span></h5><h3><span id="横竖屏切换的生命周期">横竖屏切换的生命周期</span></h3><h3><span id="gradle">Gradle</span></h3><h4><span id="是什么">是什么</span></h4><p>Gradle是一个基于Apache Ant和Apache Maven概念的项目自动化构建开源工具。它使用一种基于Groovy的特定领域语言(DSL)来声明项目设置，抛弃了基于XML的各种繁琐配置。</p>
 <ol>
 <li>Gradle是一个自动化构建工具</li>
 <li>兼容Maven等仓库</li>
 <li>基于Groovy的特定领域语言来声明名目设置</li>
 </ol>
-<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><ol>
+<h4><span id="配置文件">配置文件</span></h4><ol>
 <li>settings.gradle:整个Project的配置文件，可以设置包含哪些module</li>
 <li>build.gradle （Project的gradle文件）:整个Project的配置文件</li>
 <li>build.gradle（Module）：Module的配置文件</li>
 <li>gradle.properties：可以在 gradle.properties 文件中配置一些变量</li>
 </ol>
-<h3 id="Fragment"><a href="#Fragment" class="headerlink" title="Fragment"></a>Fragment</h3><p><span style='color: #00BFFF;font-size:24px'>结合BottomNavigationView使用</span></p>
-<p><span style='color:#3CB371;font-size:24px'>如何减少Fragment切换时的重复创建？transaction.replace方法如何？ 有没有考虑用过hide 、add、show的方法？状态保存？</span></p>
+<h3><span id="fragment">Fragment</span></h3><p><span style="color: #00BFFF;font-size:24px">结合BottomNavigationView使用</span></p>
+<p><span style="color:#3CB371;font-size:24px">如何减少Fragment切换时的重复创建？transaction.replace方法如何？ 有没有考虑用过hide 、add、show的方法？状态保存？</span></p>
 <p>先创建所有fragment的对象，在需要时初始化，如果切换时隐藏，需要时在利用，这样也能够进行状态的保存了</p>
 <p>fragment中 onHiddenChange方法可以监听 hide状态</p>
 <p><strong>fragmentTransaction  addToBackStack 有什么作用?</strong></p>
 <p>记录当前事务， backPress时 依次弹栈</p>
-<h4 id="与Activity通信的几种方式"><a href="#与Activity通信的几种方式" class="headerlink" title="与Activity通信的几种方式"></a>与Activity通信的几种方式</h4><ol>
+<h4><span id="与activity通信的几种方式">与Activity通信的几种方式</span></h4><ol>
 <li>接口  传入activity的view</li>
 <li>getActivity 调用其中的公共方法</li>
 <li>广播？</li>
 <li>getActivity.getFragmentManager.findFragmentById</li>
 </ol>
-<h3 id="Handler"><a href="#Handler" class="headerlink" title="Handler"></a>Handler</h3><h4 id="什么是Handler"><a href="#什么是Handler" class="headerlink" title="什么是Handler"></a>什么是Handler</h4><p>Android SDK 处理异步消息的核心类</p>
+<h3><span id="handler">Handler</span></h3><h4><span id="什么是handler">什么是Handler</span></h4><p>Android SDK 处理异步消息的核心类</p>
 <p>子线程与主线程通过Handler 通信，子线程通过Hanlder通知主线程的Ui更新</p>
 <p>Handler  Message  MessageQueue    Looper   Thread</p>
-<h4 id="问题的出发点"><a href="#问题的出发点" class="headerlink" title="问题的出发点"></a>问题的出发点</h4><p>Handler 多层嵌套过程如何？</p>
+<h4><span id="问题的出发点">问题的出发点</span></h4><p>Handler 多层嵌套过程如何？</p>
 <p>试图在子线程中更改UI:</p>
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210305160239366.png" alt="image-20210305160239366"></p>
 <p>在子线程中添加Looper会报错   且通过Looper.getMainLooper  或者myLooper获取的值和主线程的是一样的</p>
-<h4 id="通信原理"><a href="#通信原理" class="headerlink" title="通信原理"></a>通信原理</h4><p>Message内部结构</p>
+<h4><span id="通信原理">通信原理</span></h4><p>Message内部结构</p>
 <p>clear方法</p>
 <p>MessageQueue 进表出表  enqueueMessage的最终结果  Meeage按照when的时间远近排序  —涉及链表的操作</p>
 <p>Looper—&gt;ThreadLocal </p>
@@ -471,46 +716,46 @@
 
 
 
-<h4 id="线程通信"><a href="#线程通信" class="headerlink" title="线程通信"></a>线程通信</h4><p>Message线程间通信的数据载体</p>
-<h5 id="AsyncTask"><a href="#AsyncTask" class="headerlink" title="AsyncTask"></a>AsyncTask</h5><p>异步任务    对Handler 和Thread的封装  更简洁高效   且封装了ThreadPool</p>
+<h4><span id="线程通信">线程通信</span></h4><p>Message线程间通信的数据载体</p>
+<h5><span id="asynctask">AsyncTask</span></h5><p>异步任务    对Handler 和Thread的封装  更简洁高效   且封装了ThreadPool</p>
 <ul>
 <li>Message视角</li>
 </ul>
-<p><span style='color: #00BFFF;font-size:18px'>一个线程可以有多个Handler，一个线程的多个Handler只能有一个相同的Looper以及Looper的MessageQueue。Handler初始化时会初始化自身持有的Loope以及looper的messageQueue，发送消息时，先进入到handler.post/send中，然后在mQueue中进行enqueueMessage，通过message的when对当前插入的message进行排序（当然肯定是锁了的），确保一个messagequeue中的所有message都是以when进行排序的</span></p>
+<p><span style="color: #00BFFF;font-size:18px">一个线程可以有多个Handler，一个线程的多个Handler只能有一个相同的Looper以及Looper的MessageQueue。Handler初始化时会初始化自身持有的Loope以及looper的messageQueue，发送消息时，先进入到handler.post/send中，然后在mQueue中进行enqueueMessage，通过message的when对当前插入的message进行排序（当然肯定是锁了的），确保一个messagequeue中的所有message都是以when进行排序的</span></p>
 <ul>
 <li><p>Handler视角</p>
-<p><span style='color:#3CB371;font-size:24px'>Handler在进行处理时会通过系统持续循环的looper的loop方法进行搜索，判断当前的时间点是否有与when相同的message等待被处理，如果需要被处理，则会有一套分发机制。先看message是否带有callback的回调方法，如果没有，则看当前handler是否有callback的回调，如果还是没有，则去找handler自身写的handlemessage方法，这个方法也是暴露的，可以重写</span></p>
+<p><span style="color:#3CB371;font-size:24px">Handler在进行处理时会通过系统持续循环的looper的loop方法进行搜索，判断当前的时间点是否有与when相同的message等待被处理，如果需要被处理，则会有一套分发机制。先看message是否带有callback的回调方法，如果没有，则看当前handler是否有callback的回调，如果还是没有，则去找handler自身写的handlemessage方法，这个方法也是暴露的，可以重写</span></p>
 </li>
 </ul>
-<h4 id="HandlerThread"><a href="#HandlerThread" class="headerlink" title="HandlerThread"></a>HandlerThread</h4><p>就是内置handler的thread</p>
-<h4 id="面试问题"><a href="#面试问题" class="headerlink" title="面试问题"></a>面试问题</h4><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210305165916419.png" alt="image-20210305165916419"></p>
-<p><span style='color:red;font-size:20px;'>一个线程有几个Handler</span></p>
+<h4><span id="handlerthread">HandlerThread</span></h4><p>就是内置handler的thread</p>
+<h4><span id="面试问题">面试问题</span></h4><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210305165916419.png" alt="image-20210305165916419"></p>
+<p><span style="color:red;font-size:20px;">一个线程有几个Handler</span></p>
 <p>多个handler</p>
-<p><span style='color:red;font-size:20px;'>一个线程有几个looper，如何保证</span></p>
+<p><span style="color:red;font-size:20px;">一个线程有几个looper，如何保证</span></p>
 <p>只有一个Looper</p>
 <ul>
 <li>线程和looper的关系</li>
 </ul>
-<p><span style='color:red;font-size:20px;'>重点： 内存泄漏</span></p>
+<p><span style="color:red;font-size:20px;">重点： 内存泄漏</span></p>
 <p>根本原因：内部变量？会持有外部类的引用  ，而activity被handler持有</p>
 <p>MessageQueue  –&gt;Message  –&gt;Handler  -&gt;HandleR  -&gt;this (Activity)   –&gt;拥有大量的内存</p>
 <p>问题转为JVM问题     GC   可达性分析   发现是可达的，故不会GC</p>
 <p>解决方案</p>
 <p>static    弱引用 / 软引用   </p>
 <p>destroy时 清理handler 所有的message   messagequeue  quitsafely</p>
-<p><span style='color:red;font-size:20px;'>如何在子线程中使用Handler</span></p>
+<p><span style="color:red;font-size:20px;">如何在子线程中使用Handler</span></p>
 <p>HandlerThread</p>
 <p>如何解决      锁机制</p>
-<p><span style='color:red;font-size:20px;'>HandlerThread的不同</span></p>
-<p><span style='color:red;font-size:20px;'>没有消息时会怎么办</span></p>
-<h4 id="额外的问题"><a href="#额外的问题" class="headerlink" title="额外的问题"></a>额外的问题</h4><p>为什么 runOnUiThread 执行耗时操作还是 会影响主线程的执行</p>
-<h3 id="Intent"><a href="#Intent" class="headerlink" title="Intent"></a>Intent</h3><h3 id="RecycleView"><a href="#RecycleView" class="headerlink" title="RecycleView"></a>RecycleView</h3><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210306140559042.png" alt="image-20210306140559042"></p>
-<h4 id="与ListVIew的不同点"><a href="#与ListVIew的不同点" class="headerlink" title="与ListVIew的不同点"></a>与ListVIew的不同点</h4><p>缓存机制不同</p>
-<h4 id="滚动机制"><a href="#滚动机制" class="headerlink" title="滚动机制"></a>滚动机制</h4><p>onTouch  – scrollBy   – fill  –  layoutChunk填充  —next –tryGetViewHolder….复用 —  </p>
+<p><span style="color:red;font-size:20px;">HandlerThread的不同</span></p>
+<p><span style="color:red;font-size:20px;">没有消息时会怎么办</span></p>
+<h4><span id="额外的问题">额外的问题</span></h4><p>为什么 runOnUiThread 执行耗时操作还是 会影响主线程的执行</p>
+<h3><span id="intent">Intent</span></h3><h3><span id="recycleview">RecycleView</span></h3><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210306140559042.png" alt="image-20210306140559042"></p>
+<h4><span id="与listview的不同点">与ListVIew的不同点</span></h4><p>缓存机制不同</p>
+<h4><span id="滚动机制">滚动机制</span></h4><p>onTouch  – scrollBy   – fill  –  layoutChunk填充  —next –tryGetViewHolder….复用 —  </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">getItemDecorInsetsForChild</span><br><span class="line">   </span><br></pre></td></tr></table></figure>
 
 <p>解决itemdecoration</p>
-<h4 id="四级缓存"><a href="#四级缓存" class="headerlink" title="四级缓存"></a>四级缓存</h4><p>mAttachedScrap(屏幕内)// mCaneScrap，mCacheViews(屏幕外)，mViewCacheExtension(自定义缓存)，mRecyclerPool(缓存池)</p>
+<h4><span id="四级缓存">四级缓存</span></h4><p>mAttachedScrap(屏幕内)// mCaneScrap，mCacheViews(屏幕外)，mViewCacheExtension(自定义缓存)，mRecyclerPool(缓存池)</p>
 <p>缓存和复用到底在处理什么？ View ？ ViewHolder？</p>
 <ol>
 <li>首先在mChangeScrap  两种方式  position / id(stable id)</li>
@@ -534,20 +779,20 @@
 <p>都在内部类Recylcer</p>
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210316193720147.png" alt="image-20210316193720147"></p>
 <p>缓存池的结构</p>
-<h4 id="嵌套如何解决滑动冲突"><a href="#嵌套如何解决滑动冲突" class="headerlink" title="嵌套如何解决滑动冲突"></a>嵌套如何解决滑动冲突</h4><h4 id="具体流程和复用机制"><a href="#具体流程和复用机制" class="headerlink" title="具体流程和复用机制"></a>具体流程和复用机制</h4><h4 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h4><h5 id="Recyler"><a href="#Recyler" class="headerlink" title="Recyler"></a>Recyler</h5><p>tryGetViewHolderForPositionByDeadline</p>
-<h5 id="RecycledViewPool"><a href="#RecycledViewPool" class="headerlink" title="RecycledViewPool"></a>RecycledViewPool</h5><h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>onBindView 缓存的个数  10 </p>
+<h4><span id="嵌套如何解决滑动冲突">嵌套如何解决滑动冲突</span></h4><h4><span id="具体流程和复用机制">具体流程和复用机制</span></h4><h4><span id="内部类">内部类</span></h4><h5><span id="recyler">Recyler</span></h5><p>tryGetViewHolderForPositionByDeadline</p>
+<h5><span id="recycledviewpool">RecycledViewPool</span></h5><h4><span id="方法">方法</span></h4><p>onBindView 缓存的个数  10 </p>
 <p>onTouchEvent  触碰关键的函数    —-   滚动机制  scrollBy</p>
 <p>—-fill</p>
-<h4 id="LayoutManager"><a href="#LayoutManager" class="headerlink" title="LayoutManager"></a>LayoutManager</h4><p>measure方法主要是交给他来做的</p>
-<h3 id="Android启动原理"><a href="#Android启动原理" class="headerlink" title="Android启动原理"></a>Android启动原理</h3><p>hhhh</p><q>sbsbsb</q>
+<h4><span id="layoutmanager">LayoutManager</span></h4><p>measure方法主要是交给他来做的</p>
+<h3><span id="android启动原理">Android启动原理</span></h3><p>hhhh</p><q>sbsbsb</q>
 
 <pre><code> w;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 </code></pre>
-<h3 id="屏幕适配"><a href="#屏幕适配" class="headerlink" title="屏幕适配"></a>屏幕适配</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>dp ：      density-independent pixels n个实际像素，与设备dpi相关，与px（像素）换算关系：dp/160 = px/dpi。  px = dp*dpi /160</p>
+<h3><span id="屏幕适配">屏幕适配</span></h3><h4><span id="概念">概念</span></h4><p>dp ：      density-independent pixels n个实际像素，与设备dpi相关，与px（像素）换算关系：dp/160 = px/dpi。  px = dp*dpi /160</p>
 <p>那么dp究竟解决了适配上的什么问题？可以看出1dp = 1/160inch；那么它至少能解决一个问题，就是你在布局文件写某个View的宽和高为160dp*160dp，这个View在任何分辨率的屏幕中，显示的尺寸大小是大约是一致的（可能不精确），大概是 1 inch * 1 inch </p>
 <p>dpi:         Dots Per Inch（每英寸所打印的点数）</p>
 <p>px: 1920*1080 (px)</p>
-<h3 id="Framework"><a href="#Framework" class="headerlink" title="Framework"></a>Framework</h3><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><h3 id="ContentProvider"><a href="#ContentProvider" class="headerlink" title="ContentProvider"></a>ContentProvider</h3><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><h3 id="OkHttp"><a href="#OkHttp" class="headerlink" title="OkHttp"></a>OkHttp</h3><h4 id="核心类"><a href="#核心类" class="headerlink" title="核心类"></a>核心类</h4><ol>
+<h3><span id="framework">Framework</span></h3><h4><span id="概念">概念</span></h4><h3><span id="contentprovider">ContentProvider</span></h3><h4><span id="作用">作用</span></h4><h3><span id="okhttp">OkHttp</span></h3><h4><span id="核心类">核心类</span></h4><ol>
 <li><p>OkHttpClient</p>
 <p>newCall(this,request)   return new ReaCall</p>
 <ol>
@@ -630,32 +875,32 @@ else if (!addWorker(command, false))
 <li><p>Async</p>
 </li>
 </ol>
-<h4 id="流程分述"><a href="#流程分述" class="headerlink" title="流程分述"></a>流程分述</h4><h5 id="1-如何发送"><a href="#1-如何发送" class="headerlink" title="1. 如何发送"></a>1. 如何发送</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">okHttpClient.newCall(request).enqueue(<span class="keyword">new</span> Callback() &#123;&#125;);</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> RealCall(<span class="keyword">this</span>, request);</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enqueue</span><span class="params">(Callback responseCallback, <span class="keyword">boolean</span> forWebSocket)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (executed) <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">&quot;Already Executed&quot;</span>);</span><br><span class="line">      executed = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    client.dispatcher().enqueue(<span class="keyword">new</span> AsyncCall(responseCallback, forWebSocket));</span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">return</span> dispatcher;</span><br><span class="line"><span class="function"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">enqueue</span><span class="params">(AsyncCall call)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (runningAsyncCalls.size() &lt; maxRequests &amp;&amp; runningCallsForHost(call) &lt; maxRequestsPerHost) &#123;</span><br><span class="line">      runningAsyncCalls.add(call);</span><br><span class="line">      executorService().execute(call);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      readyAsyncCalls.add(call);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> ExecutorService <span class="title">executorService</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (executorService == <span class="keyword">null</span>) &#123;</span><br><span class="line">      executorService = <span class="keyword">new</span> ThreadPoolExecutor(<span class="number">0</span>, Integer.MAX_VALUE, <span class="number">60</span>, TimeUnit.SECONDS,</span><br><span class="line">          <span class="keyword">new</span> SynchronousQueue&lt;Runnable&gt;(), Util.threadFactory(<span class="string">&quot;OkHttp Dispatcher&quot;</span>, <span class="keyword">false</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> executorService;</span><br><span class="line">  &#125;</span><br><span class="line">ThreadPoolExecutor.execute();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">(Runnable command)</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">        <span class="keyword">int</span> c = ctl.get();</span><br><span class="line">        <span class="keyword">if</span> (workerCountOf(c) &lt; corePoolSize) &#123;</span><br><span class="line">            <span class="keyword">if</span> (addWorker(command, <span class="keyword">true</span>))</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            c = ctl.get();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (isRunning(c) &amp;&amp; workQueue.offer(command)) &#123;</span><br><span class="line">            <span class="keyword">int</span> recheck = ctl.get();</span><br><span class="line">            <span class="keyword">if</span> (! isRunning(recheck) &amp;&amp; remove(command))</span><br><span class="line">                reject(command);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (workerCountOf(recheck) == <span class="number">0</span>)</span><br><span class="line">                addWorker(<span class="keyword">null</span>, <span class="keyword">false</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (!addWorker(command, <span class="keyword">false</span>))</span><br><span class="line">            reject(command);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4><span id="流程分述">流程分述</span></h4><h5><span id="1-如何发送">1. 如何发送</span></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">okHttpClient.newCall(request).enqueue(<span class="keyword">new</span> Callback() &#123;&#125;);</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> RealCall(<span class="keyword">this</span>, request);</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enqueue</span><span class="params">(Callback responseCallback, <span class="keyword">boolean</span> forWebSocket)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (executed) <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">&quot;Already Executed&quot;</span>);</span><br><span class="line">      executed = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    client.dispatcher().enqueue(<span class="keyword">new</span> AsyncCall(responseCallback, forWebSocket));</span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">return</span> dispatcher;</span><br><span class="line"><span class="function"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">enqueue</span><span class="params">(AsyncCall call)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (runningAsyncCalls.size() &lt; maxRequests &amp;&amp; runningCallsForHost(call) &lt; maxRequestsPerHost) &#123;</span><br><span class="line">      runningAsyncCalls.add(call);</span><br><span class="line">      executorService().execute(call);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      readyAsyncCalls.add(call);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> ExecutorService <span class="title">executorService</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (executorService == <span class="keyword">null</span>) &#123;</span><br><span class="line">      executorService = <span class="keyword">new</span> ThreadPoolExecutor(<span class="number">0</span>, Integer.MAX_VALUE, <span class="number">60</span>, TimeUnit.SECONDS,</span><br><span class="line">          <span class="keyword">new</span> SynchronousQueue&lt;Runnable&gt;(), Util.threadFactory(<span class="string">&quot;OkHttp Dispatcher&quot;</span>, <span class="keyword">false</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> executorService;</span><br><span class="line">  &#125;</span><br><span class="line">ThreadPoolExecutor.execute();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">(Runnable command)</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">        <span class="keyword">int</span> c = ctl.get();</span><br><span class="line">        <span class="keyword">if</span> (workerCountOf(c) &lt; corePoolSize) &#123;</span><br><span class="line">            <span class="keyword">if</span> (addWorker(command, <span class="keyword">true</span>))</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            c = ctl.get();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (isRunning(c) &amp;&amp; workQueue.offer(command)) &#123;</span><br><span class="line">            <span class="keyword">int</span> recheck = ctl.get();</span><br><span class="line">            <span class="keyword">if</span> (! isRunning(recheck) &amp;&amp; remove(command))</span><br><span class="line">                reject(command);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (workerCountOf(recheck) == <span class="number">0</span>)</span><br><span class="line">                addWorker(<span class="keyword">null</span>, <span class="keyword">false</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (!addWorker(command, <span class="keyword">false</span>))</span><br><span class="line">            reject(command);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h5 id="2-被谁处理"><a href="#2-被谁处理" class="headerlink" title="2. 被谁处理"></a>2. 被谁处理</h5><h5 id="3-如何维护"><a href="#3-如何维护" class="headerlink" title="3. 如何维护"></a>3. 如何维护</h5><h5 id="4-建造者模式"><a href="#4-建造者模式" class="headerlink" title="4. 建造者模式"></a>4. 建造者模式</h5><p>不需要关注细节，定制、默认</p>
+<h5><span id="2-被谁处理">2. 被谁处理</span></h5><h5><span id="3-如何维护">3. 如何维护</span></h5><h5><span id="4-建造者模式">4. 建造者模式</span></h5><p>不需要关注细节，定制、默认</p>
 <p>链式编程   —return this</p>
-<h5 id="5-责任链模式"><a href="#5-责任链模式" class="headerlink" title="5. 责任链模式"></a>5. 责任链模式</h5><h3 id="Retrofit"><a href="#Retrofit" class="headerlink" title="Retrofit"></a>Retrofit</h3><h4 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h4><p>Retrofit基于okhttp封装的网络请求框架, 网络请求的工作本质上是 OkHttp 完成，而 retrofit 仅负责网络请求接口的封装。</p>
+<h5><span id="5-责任链模式">5. 责任链模式</span></h5><h3><span id="retrofit">Retrofit</span></h3><h4><span id="好处">好处</span></h4><p>Retrofit基于okhttp封装的网络请求框架, 网络请求的工作本质上是 OkHttp 完成，而 retrofit 仅负责网络请求接口的封装。</p>
 <p>Retrofit优势，就是简洁易用,解耦,扩展性强,可搭配多种Json解析框架(例如Gson),另外还支持RxJava.网络请求的工作本质上是 <code>OkHttp</code> 完成，而 Retrofit 仅负责 网络请求接口的封装</p>
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210322153358168.png" alt="image-20210322153358168"></p>
 <p>注解类型</p>
 <p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210322153735717.png" alt="image-20210322153735717"></p>
 <p>Retrofit不做网络请求，他相当于是一个中间人</p>
 <p>通过接口，对接口方法进行注解</p>
-<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><h5 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INetApiService netApiService= retrofit.create(INetApiService.class);</span><br></pre></td></tr></table></figure>
+<h4><span id="原理">原理</span></h4><h5><span id="动态代理">动态代理</span></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INetApiService netApiService= retrofit.create(INetApiService.class);</span><br></pre></td></tr></table></figure>
 
 <p>这里得到的netApiService不是本尊，而只是一个动态代理对象</p>
-<h4 id="类"><a href="#类" class="headerlink" title="类"></a>类</h4><p><strong>Platform</strong></p>
+<h4><span id="类">类</span></h4><p><strong>Platform</strong></p>
 <p><strong>ServiceMethod</strong>  一个~代表一个请求接口</p>
 <p><strong>CallAdapter</strong></p>
 <p>具体类型不同的adapter  Rxjava Gson Java8 guava rxjava…</p>
-<h4 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h4><p>动态代理</p>
+<h4><span id="设计模式">设计模式</span></h4><p>动态代理</p>
 <p>工厂模式</p>
 <p>建造者模式</p>
 <p>外观模式</p>
-<h4 id="差异"><a href="#差异" class="headerlink" title="差异"></a>差异</h4><p>Retrofit的Call 支持泛型，也就是可以用一个bean类进行包装，然后通过GSON直接返回想得到的对象？</p>
-<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>为什么请求在子线程而显示在UI主线程？ 添加了Looper？</p>
-<h3 id="Volley"><a href="#Volley" class="headerlink" title="Volley"></a>Volley</h3><h3 id="图片加载框架"><a href="#图片加载框架" class="headerlink" title="图片加载框架"></a>图片加载框架</h3><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210329094112507.png" alt="image-20210329094112507"></p>
-<h3 id="Glide"><a href="#Glide" class="headerlink" title="Glide"></a>Glide</h3><p><strong>load</strong></p>
+<h4><span id="差异">差异</span></h4><p>Retrofit的Call 支持泛型，也就是可以用一个bean类进行包装，然后通过GSON直接返回想得到的对象？</p>
+<h4><span id="问题">问题</span></h4><p>为什么请求在子线程而显示在UI主线程？ 添加了Looper？</p>
+<h3><span id="volley">Volley</span></h3><h3><span id="图片加载框架">图片加载框架</span></h3><p><img src="https://s401177923-1302493622.cos.ap-nanjing.myqcloud.com/mdImages/image-20210329094112507.png" alt="image-20210329094112507"></p>
+<h3><span id="glide">Glide</span></h3><p><strong>load</strong></p>
 <p>空白fragment  – 控制生命周期</p>
 <p>为什么Glide不能在子线程中绘制</p>
 <p>子线程中不会添加生命周期机制  主线程才会对空白的fragment监听activiyty  fragment变化</p>
@@ -678,17 +923,17 @@ else if (!addWorker(command, false))
 <p>空白Fragment附着在activity  监听生命周期</p>
 <p>RequestManager 控制 生命周期 onstart方法中有对targetTracker、 requestTracker的生命周期方法调用</p>
 <p>设计模式</p>
-<h4 id="from"><a href="#from" class="headerlink" title="from"></a>from</h4><h4 id="load"><a href="#load" class="headerlink" title="load"></a>load</h4><h4 id="into"><a href="#into" class="headerlink" title="into"></a>into</h4><h3 id="面试问题-1"><a href="#面试问题-1" class="headerlink" title="面试问题"></a>面试问题</h3><h4 id="为什么子线程不能更新UI"><a href="#为什么子线程不能更新UI" class="headerlink" title="为什么子线程不能更新UI"></a>为什么子线程不能更新UI</h4><p>原因： ViewRootIml.scheduleTraversals对view进行绘制前，对当前线程进行检查是不是主线程</p>
+<h4><span id="from">from</span></h4><h4><span id="load">load</span></h4><h4><span id="into">into</span></h4><h3><span id="面试问题">面试问题</span></h3><h4><span id="为什么子线程不能更新ui">为什么子线程不能更新UI</span></h4><p>原因： ViewRootIml.scheduleTraversals对view进行绘制前，对当前线程进行检查是不是主线程</p>
 <p>，多线程加载Ui使得资源抢占，界面更新混乱</p>
 <p>runOnUiThread的作用</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (Thread.currentThread() != mUiThread) &#123;</span><br><span class="line">    <span class="comment">//发送消息到主线程的消息队列中</span></span><br><span class="line">    mHandler.post(action);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//如果是主线程，则直接执行</span></span><br><span class="line">    action.run();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="View-post-和-Handler-post的区别"><a href="#View-post-和-Handler-post的区别" class="headerlink" title="View.post 和 Handler.post的区别"></a>View.post 和 Handler.post的区别</h4><p>在Oncreate里直接调用View.getWidth或者View.getMeasuredWidth返回都是0</p>
+<h4><span id="viewpost-和-handlerpost的区别">View.post 和 Handler.post的区别</span></h4><p>在Oncreate里直接调用View.getWidth或者View.getMeasuredWidth返回都是0</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">post</span><span class="params">(Runnable action)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> AttachInfo attachInfo = mAttachInfo;</span><br><span class="line">    <span class="comment">//当前view加入到window中，则直接用ui线程的handler发送消息</span></span><br><span class="line">    <span class="keyword">if</span> (attachInfo != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> attachInfo.mHandler.post(action);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Postpone the runnable until we know on which thread it needs to run.</span></span><br><span class="line">    <span class="comment">// Assume that the runnable will be successfully placed after attach.</span></span><br><span class="line">    <span class="comment">//没有加入到wndow中，放入viewrootimpl的Runqueue中</span></span><br><span class="line">    getRunQueue().post(action);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>如果View尚未attach到window的话，runnable被放到了ViewRootImpl#RunQueue中，最终也会被处理，但不是通过MessageQueue。</p>
 <p>而是等到ViewRootImpl的下一个performTraversals时候，把RunQueue里的所有runnable都拿出来并执行</p>
-<h4 id="Gradle到底是个啥"><a href="#Gradle到底是个啥" class="headerlink" title="Gradle到底是个啥"></a>Gradle到底是个啥</h4><h2 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h2><h3 id="引擎"><a href="#引擎" class="headerlink" title="引擎"></a>引擎</h3><h4 id="MyIAsm"><a href="#MyIAsm" class="headerlink" title="MyIAsm"></a>MyIAsm</h4><h4 id="Inoodb"><a href="#Inoodb" class="headerlink" title="Inoodb"></a>Inoodb</h4><h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><h4 id="MyIAsm和Inoodb的不同"><a href="#MyIAsm和Inoodb的不同" class="headerlink" title="MyIAsm和Inoodb的不同"></a>MyIAsm和Inoodb的不同</h4><h2 id="计算机原理"><a href="#计算机原理" class="headerlink" title="计算机原理"></a>计算机原理</h2><h2 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h2><p><strong>系统按什么规则回收后台的app</strong></p>
+<h4><span id="gradle到底是个啥">Gradle到底是个啥</span></h4><h2><span id="mysql">Mysql</span></h2><h3><span id="引擎">引擎</span></h3><h4><span id="myiasm">MyIAsm</span></h4><h4><span id="inoodb">Inoodb</span></h4><h3><span id="索引">索引</span></h3><h4><span id="myiasm和inoodb的不同">MyIAsm和Inoodb的不同</span></h4><h2><span id="计算机原理">计算机原理</span></h2><h2><span id="面试">面试</span></h2><p><strong>系统按什么规则回收后台的app</strong></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010227042/article/details/108451297?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161715872916780264092268%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&amp;request_id=161715872916780264092268&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-1-108451297.pc_search_result_hbase_insert&amp;utm_term=%E7%B3%BB%E7%BB%9F%E6%8C%89%E4%BB%80%E4%B9%88%E8%A7%84%E5%88%99%E5%9B%9E%E6%94%B6%E5%90%8E%E5%8F%B0%E7%9A%84app">https://blog.csdn.net/u010227042/article/details/108451297?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161715872916780264092268%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&amp;request_id=161715872916780264092268&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-1-108451297.pc_search_result_hbase_insert&amp;utm_term=%E7%B3%BB%E7%BB%9F%E6%8C%89%E4%BB%80%E4%B9%88%E8%A7%84%E5%88%99%E5%9B%9E%E6%94%B6%E5%90%8E%E5%8F%B0%E7%9A%84app</a></p>
 <p><strong>操作系统的IO模型</strong></p>
 <p><strong>Java IO 设计模式</strong></p>
@@ -804,6 +1049,10 @@ else if (!addWorker(command, false))
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/pipi.jpg"
+                alt="" />
+            
               <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -813,7 +1062,7 @@ else if (!addWorker(command, false))
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/%20%7C%7C%20archive">
+                <a href="/archives/%7C%7C%20archive">
               
                   <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">posts</span>
@@ -848,6 +1097,28 @@ else if (!addWorker(command, false))
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yunlong626" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="401177923@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="401177923" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
 
           
           
@@ -870,7 +1141,7 @@ else if (!addWorker(command, false))
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text">Android面试总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CAS"><span class="nav-number">1.1.</span> <span class="nav-text">CAS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IPC%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1"><span class="nav-number">1.1.1.</span> <span class="nav-text">IPC进程间通信</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">线程和进程的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Android%E4%B8%AD%E7%9A%84IPC"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Android中的IPC</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AIDL"><span class="nav-number">1.1.1.2.1.</span> <span class="nav-text">AIDL</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Binder"><span class="nav-number">1.1.1.2.2.</span> <span class="nav-text">Binder</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.1.2.3.</span> <span class="nav-text">序列化的两种方式</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Andoird"><span class="nav-number">1.2.</span> <span class="nav-text">Andoird</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E5%8E%9F%E7%90%86"><span class="nav-number">1.2.1.</span> <span class="nav-text">启动原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6"><span class="nav-number">1.3.1.</span> <span class="nav-text">事件分发机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#dispatchTouchEvent"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">dispatchTouchEvent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#onInterceptTouchEvent"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">onInterceptTouchEvent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#onTouchEvent"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">onTouchEvent</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#View%E5%8E%9F%E7%90%86"><span class="nav-number">1.3.2.</span> <span class="nav-text">View原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Activty%E7%9A%84%E5%90%AF%E5%8A%A8%E9%A1%BA%E5%BA%8F"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">Activty的启动顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Activity%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">Activity启动模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9activity%E8%BF%9B%E8%A1%8C%E7%BC%93%E5%AD%98"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">对activity进行缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Activity%E9%97%B4%E9%80%9A%E4%BF%A1"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">Activity间通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#View%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.2.5.</span> <span class="nav-text">View结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#View%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B"><span class="nav-number">1.3.2.6.</span> <span class="nav-text">View绘制流程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#measure"><span class="nav-number">1.3.2.6.1.</span> <span class="nav-text">measure</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#layout"><span class="nav-number">1.3.2.6.2.</span> <span class="nav-text">layout</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#draw"><span class="nav-number">1.3.2.6.3.</span> <span class="nav-text">draw</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%AA%E7%AB%96%E5%B1%8F%E5%88%87%E6%8D%A2%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">1.3.3.</span> <span class="nav-text">横竖屏切换的生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gradle"><span class="nav-number">1.3.4.</span> <span class="nav-text">Gradle</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">配置文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fragment"><span class="nav-number">1.3.5.</span> <span class="nav-text">Fragment</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8EActivity%E9%80%9A%E4%BF%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">与Activity通信的几种方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Handler"><span class="nav-number">1.3.6.</span> <span class="nav-text">Handler</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFHandler"><span class="nav-number">1.3.6.1.</span> <span class="nav-text">什么是Handler</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%9A%84%E5%87%BA%E5%8F%91%E7%82%B9"><span class="nav-number">1.3.6.2.</span> <span class="nav-text">问题的出发点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86"><span class="nav-number">1.3.6.3.</span> <span class="nav-text">通信原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1"><span class="nav-number">1.3.6.4.</span> <span class="nav-text">线程通信</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AsyncTask"><span class="nav-number">1.3.6.4.1.</span> <span class="nav-text">AsyncTask</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HandlerThread"><span class="nav-number">1.3.6.5.</span> <span class="nav-text">HandlerThread</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98"><span class="nav-number">1.3.6.6.</span> <span class="nav-text">面试问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%9D%E5%A4%96%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.3.6.7.</span> <span class="nav-text">额外的问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Intent"><span class="nav-number">1.3.7.</span> <span class="nav-text">Intent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RecycleView"><span class="nav-number">1.3.8.</span> <span class="nav-text">RecycleView</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8EListVIew%E7%9A%84%E4%B8%8D%E5%90%8C%E7%82%B9"><span class="nav-number">1.3.8.1.</span> <span class="nav-text">与ListVIew的不同点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%BB%9A%E5%8A%A8%E6%9C%BA%E5%88%B6"><span class="nav-number">1.3.8.2.</span> <span class="nav-text">滚动机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E7%BA%A7%E7%BC%93%E5%AD%98"><span class="nav-number">1.3.8.3.</span> <span class="nav-text">四级缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E6%BB%91%E5%8A%A8%E5%86%B2%E7%AA%81"><span class="nav-number">1.3.8.4.</span> <span class="nav-text">嵌套如何解决滑动冲突</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B%E5%92%8C%E5%A4%8D%E7%94%A8%E6%9C%BA%E5%88%B6"><span class="nav-number">1.3.8.5.</span> <span class="nav-text">具体流程和复用机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">1.3.8.6.</span> <span class="nav-text">内部类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Recyler"><span class="nav-number">1.3.8.6.1.</span> <span class="nav-text">Recyler</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#RecycledViewPool"><span class="nav-number">1.3.8.6.2.</span> <span class="nav-text">RecycledViewPool</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.8.7.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LayoutManager"><span class="nav-number">1.3.8.8.</span> <span class="nav-text">LayoutManager</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android%E5%90%AF%E5%8A%A8%E5%8E%9F%E7%90%86"><span class="nav-number">1.3.9.</span> <span class="nav-text">Android启动原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D"><span class="nav-number">1.3.10.</span> <span class="nav-text">屏幕适配</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.3.10.1.</span> <span class="nav-text">概念</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Framework"><span class="nav-number">1.3.11.</span> <span class="nav-text">Framework</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5-1"><span class="nav-number">1.3.11.1.</span> <span class="nav-text">概念</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ContentProvider"><span class="nav-number">1.3.12.</span> <span class="nav-text">ContentProvider</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8"><span class="nav-number">1.3.12.1.</span> <span class="nav-text">作用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OkHttp"><span class="nav-number">1.3.13.</span> <span class="nav-text">OkHttp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E7%B1%BB"><span class="nav-number">1.3.13.1.</span> <span class="nav-text">核心类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B%E5%88%86%E8%BF%B0"><span class="nav-number">1.3.13.2.</span> <span class="nav-text">流程分述</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E5%A6%82%E4%BD%95%E5%8F%91%E9%80%81"><span class="nav-number">1.3.13.2.1.</span> <span class="nav-text">1. 如何发送</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E8%A2%AB%E8%B0%81%E5%A4%84%E7%90%86"><span class="nav-number">1.3.13.2.2.</span> <span class="nav-text">2. 被谁处理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E5%A6%82%E4%BD%95%E7%BB%B4%E6%8A%A4"><span class="nav-number">1.3.13.2.3.</span> <span class="nav-text">3. 如何维护</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.3.13.2.4.</span> <span class="nav-text">4. 建造者模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.3.13.2.5.</span> <span class="nav-text">5. 责任链模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Retrofit"><span class="nav-number">1.3.14.</span> <span class="nav-text">Retrofit</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A5%BD%E5%A4%84"><span class="nav-number">1.3.14.1.</span> <span class="nav-text">好处</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-number">1.3.14.2.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86"><span class="nav-number">1.3.14.2.1.</span> <span class="nav-text">动态代理</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">1.3.14.3.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.3.14.4.</span> <span class="nav-text">设计模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%AE%E5%BC%82"><span class="nav-number">1.3.14.5.</span> <span class="nav-text">差异</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">1.3.14.6.</span> <span class="nav-text">问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Volley"><span class="nav-number">1.3.15.</span> <span class="nav-text">Volley</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E6%A1%86%E6%9E%B6"><span class="nav-number">1.3.16.</span> <span class="nav-text">图片加载框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Glide"><span class="nav-number">1.3.17.</span> <span class="nav-text">Glide</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#from"><span class="nav-number">1.3.17.1.</span> <span class="nav-text">from</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#load"><span class="nav-number">1.3.17.2.</span> <span class="nav-text">load</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#into"><span class="nav-number">1.3.17.3.</span> <span class="nav-text">into</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98-1"><span class="nav-number">1.3.18.</span> <span class="nav-text">面试问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%90%E7%BA%BF%E7%A8%8B%E4%B8%8D%E8%83%BD%E6%9B%B4%E6%96%B0UI"><span class="nav-number">1.3.18.1.</span> <span class="nav-text">为什么子线程不能更新UI</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#View-post-%E5%92%8C-Handler-post%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.3.18.2.</span> <span class="nav-text">View.post 和 Handler.post的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gradle%E5%88%B0%E5%BA%95%E6%98%AF%E4%B8%AA%E5%95%A5"><span class="nav-number">1.3.18.3.</span> <span class="nav-text">Gradle到底是个啥</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql"><span class="nav-number">1.4.</span> <span class="nav-text">Mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E6%93%8E"><span class="nav-number">1.4.1.</span> <span class="nav-text">引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MyIAsm"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">MyIAsm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inoodb"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">Inoodb</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95"><span class="nav-number">1.4.2.</span> <span class="nav-text">索引</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MyIAsm%E5%92%8CInoodb%E7%9A%84%E4%B8%8D%E5%90%8C"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">MyIAsm和Inoodb的不同</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86"><span class="nav-number">1.5.</span> <span class="nav-text">计算机原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95"><span class="nav-number">1.6.</span> <span class="nav-text">面试</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Android面试总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">CAS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.1.</span> <span class="nav-text">IPC进程间通信</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">线程和进程的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Android中的IPC</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.1.1.2.1.</span> <span class="nav-text">AIDL</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.1.1.2.2.</span> <span class="nav-text">Binder</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.1.1.2.3.</span> <span class="nav-text">序列化的两种方式</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">Andoird</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.1.</span> <span class="nav-text">启动原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.1.</span> <span class="nav-text">事件分发机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">dispatchTouchEvent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">onInterceptTouchEvent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">onTouchEvent</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.2.</span> <span class="nav-text">View原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">Activty的启动顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">Activity启动模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">对activity进行缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">Activity间通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.2.5.</span> <span class="nav-text">View结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.2.6.</span> <span class="nav-text">View绘制流程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.3.2.6.1.</span> <span class="nav-text">measure</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.3.2.6.2.</span> <span class="nav-text">layout</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.3.2.6.3.</span> <span class="nav-text">draw</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.3.</span> <span class="nav-text">横竖屏切换的生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.4.</span> <span class="nav-text">Gradle</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">配置文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.5.</span> <span class="nav-text">Fragment</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">与Activity通信的几种方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.6.</span> <span class="nav-text">Handler</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.6.1.</span> <span class="nav-text">什么是Handler</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.6.2.</span> <span class="nav-text">问题的出发点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.6.3.</span> <span class="nav-text">通信原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.6.4.</span> <span class="nav-text">线程通信</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.3.6.4.1.</span> <span class="nav-text">AsyncTask</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.6.5.</span> <span class="nav-text">HandlerThread</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.6.6.</span> <span class="nav-text">面试问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.6.7.</span> <span class="nav-text">额外的问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.7.</span> <span class="nav-text">Intent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.8.</span> <span class="nav-text">RecycleView</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.8.1.</span> <span class="nav-text">与ListVIew的不同点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.8.2.</span> <span class="nav-text">滚动机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.8.3.</span> <span class="nav-text">四级缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.8.4.</span> <span class="nav-text">嵌套如何解决滑动冲突</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.8.5.</span> <span class="nav-text">具体流程和复用机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.8.6.</span> <span class="nav-text">内部类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.3.8.6.1.</span> <span class="nav-text">Recyler</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.3.8.6.2.</span> <span class="nav-text">RecycledViewPool</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.8.7.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.8.8.</span> <span class="nav-text">LayoutManager</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.9.</span> <span class="nav-text">Android启动原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.10.</span> <span class="nav-text">屏幕适配</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.10.1.</span> <span class="nav-text">概念</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.11.</span> <span class="nav-text">Framework</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.11.1.</span> <span class="nav-text">概念</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.12.</span> <span class="nav-text">ContentProvider</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.12.1.</span> <span class="nav-text">作用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.13.</span> <span class="nav-text">OkHttp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.13.1.</span> <span class="nav-text">核心类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.13.2.</span> <span class="nav-text">流程分述</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.3.13.2.1.</span> <span class="nav-text">1. 如何发送</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.3.13.2.2.</span> <span class="nav-text">2. 被谁处理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.3.13.2.3.</span> <span class="nav-text">3. 如何维护</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.3.13.2.4.</span> <span class="nav-text">4. 建造者模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.3.13.2.5.</span> <span class="nav-text">5. 责任链模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.14.</span> <span class="nav-text">Retrofit</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.14.1.</span> <span class="nav-text">好处</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.14.2.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.3.14.2.1.</span> <span class="nav-text">动态代理</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.14.3.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.14.4.</span> <span class="nav-text">设计模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.14.5.</span> <span class="nav-text">差异</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.14.6.</span> <span class="nav-text">问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.15.</span> <span class="nav-text">Volley</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.16.</span> <span class="nav-text">图片加载框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.17.</span> <span class="nav-text">Glide</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.17.1.</span> <span class="nav-text">from</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.17.2.</span> <span class="nav-text">load</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.17.3.</span> <span class="nav-text">into</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.18.</span> <span class="nav-text">面试问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.18.1.</span> <span class="nav-text">为什么子线程不能更新UI</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.18.2.</span> <span class="nav-text">View.post 和 Handler.post的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.18.3.</span> <span class="nav-text">Gradle到底是个啥</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.4.</span> <span class="nav-text">Mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.4.1.</span> <span class="nav-text">引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">MyIAsm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">Inoodb</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.4.2.</span> <span class="nav-text">索引</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">MyIAsm和Inoodb的不同</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.5.</span> <span class="nav-text">计算机原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.6.</span> <span class="nav-text">面试</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -890,7 +1161,7 @@ else if (!addWorker(command, false))
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2020/12/28 &mdash; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -908,12 +1179,32 @@ else if (!addWorker(command, false))
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
@@ -955,6 +1246,8 @@ else if (!addWorker(command, false))
   
 
 
+  
+
 
 
 
@@ -995,6 +1288,11 @@ else if (!addWorker(command, false))
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
 
   
 
@@ -1007,6 +1305,13 @@ else if (!addWorker(command, false))
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
@@ -1055,6 +1360,323 @@ else if (!addWorker(command, false))
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 
